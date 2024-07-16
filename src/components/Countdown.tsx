@@ -35,8 +35,8 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
     return (
-        <div className='pb-96'>
-            <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className}`}>Countdown</h1>
+        <div className=''>
+            <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>Countdown</h1>
             <div className="flex items-center justify-center gap-5">
                 <div className='flex-col mt-10 '>
                     <p className={`text-3xl text-center ${turret.className}`}>{days} </p>

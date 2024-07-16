@@ -14,6 +14,14 @@ export const turret = Turret_Road({
 
 const HomePage: React.FC = () => {
   const targetDate = new Date("2024-07-28");
+  const timelineData = [
+    { label: 'Problem Statements Release' },
+    { label: 'Idea Proposal Submission' },
+    { label: 'Announcement of Selected Teams' },
+    { label: 'Hackathon Starts' },
+    { label: 'Hackathon Ends' },
+    { label: 'Announcement of Winners' },
+  ];
 
   return (
     <div>
@@ -70,10 +78,10 @@ const HomePage: React.FC = () => {
         <SectionDividerLine />
       </section>
 
-      <section>
+      <section className='pb-24'>
         <Countdown targetDate={targetDate} />
-        <Timeline/>
       </section>
+      <Timeline />
     </div>
   );
 };
