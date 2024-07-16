@@ -74,8 +74,8 @@ const Navbar = () => {
         </motion.div>
         <motion.div className="sm:invisible relative" variants={itemVariants}>
           <button onClick={toggleModel}>
-            {!navOpen && <FiAlignJustify color="white" size={35} />}
-            {navOpen && <FaTimes color="#ddd" size={35} />}
+            {!navOpen && <FiAlignJustify color="white" size={35} className="mt-2 ml-12" />}
+            {navOpen && <FaTimes color="#ddd" size={35} className="mt-2 ml-12" />}
           </button>
           {navOpen && (
             <motion.div 

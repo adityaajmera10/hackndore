@@ -1,15 +1,20 @@
 import React from "react";
 import Navbar from "./common/Navbar";
 import SectionDividerLine from "./SectionDividerLine";
-import { Turret_Road } from "next/font/google";
 import ScrambleText from "@/components/ScrambleText";
 import Link from "next/link";
+import TechnologyCarnivalHeader from "./TechnologyCarnivalHeader";
+import Countdown from "@/components/Countdown";
+import { Turret_Road } from "next/font/google";
+import Timeline from './Timeline';
 export const turret = Turret_Road({
   weight: "800",
   subsets: ["latin"],
 });
 
 const HomePage: React.FC = () => {
+  const targetDate = new Date("2024-07-28");
+
   return (
     <div>
       <Navbar />
@@ -17,7 +22,7 @@ const HomePage: React.FC = () => {
         id="hero"
         className="w-11/12 mx-auto p-5 sm:pt-11 max-w-[110rem] pt-28"
       >
-        <div className="-mt-10 flex flex-col-reverse md:items-center lg:flex-row gap-10 lg:mt-10">
+        <div className="-mt-10 flex flex-col-reverse md:items-center lg:flex-row gap-10 lg:mt-10 ">
           <div className="lg:w-3/5 flex flex-col gap-5">
             <h1
               className={`font-extrabold text-2xl sm:text-4xl xl:mt-5 xl:text-6xl myShadow text-primary-heading  ${turret.className}`}
@@ -57,8 +62,17 @@ const HomePage: React.FC = () => {
             ></video>
           </div>
         </div>
+        <SectionDividerLine />
+        <div className=" pt-10">
+          <TechnologyCarnivalHeader />
+        </div>
         <div className="md:h-10"></div>
         <SectionDividerLine />
+      </section>
+
+      <section>
+        <Countdown targetDate={targetDate} />
+        <Timeline/>
       </section>
     </div>
   );
