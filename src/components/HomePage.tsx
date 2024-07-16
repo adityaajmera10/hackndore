@@ -24,7 +24,10 @@ const HomePage: React.FC = () => {
             >
               Hack&apos;Ndore Hackathon
             </h1>
+            <h1 className="text-3xl font-mono w-10/12 pl-3 ">
+      Where Creativity Meets Technology and 
             <ScrambleText/>
+            </h1>
             <p className="pl-4 text-base sm:text-xl ">
             Welcome to the inaugural Hack&apos;Ndore Hackathon, Central India&apos;s largest technology event, brought to you by Indore Municipal Corporation, under the leadership of Hon&apos;ble Mayor of Indore Shri Pushyamitra Bhargav. This pioneering hackathon aims to tackle real-time challenges faced by our Municipal Corporation, e-Nagarpalika and other e-Governance portals.
             </p>

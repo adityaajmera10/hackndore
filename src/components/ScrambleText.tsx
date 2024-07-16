@@ -1,43 +1,65 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Scramble } from 'react-scramble';
 
-const ScrambleHeading = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-  const words = ['Code', 'Think', 'Innovate'];
+interface WordEmoji {
+  word: string;
+  emoji: string;
+}
+
+const ScrambleHeading: React.FC = () => {
+  const [displayText, setDisplayText] = useState<string>('');
+  const [currentEmoji, setCurrentEmoji] = useState<string>('');
+  const wordEmojis: WordEmoji[] = [
+    { word: 'Code', emoji: '💻' },
+    { word: 'Think', emoji: '🧠' },
+    { word: 'Innovate', emoji: '💡' }
+  ];
+  const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
+
+  const scrambleText = (finalText: string, emoji: string) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let iteration = 0;
+    const maxIterations = 10;
+
+    const interval = setInterval(() => {
+      setDisplayText(prevText => 
+        finalText.split('')
+          .map((letter, index) => {
+            if (index < iteration) {
+              return finalText[index];
+            }
+            return characters[Math.floor(Math.random() * characters.length)];
+          })
+          .join('')
+      );
+
+      if (iteration >= finalText.length) {
+        clearInterval(interval);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+
+    setCurrentEmoji(emoji);
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length);
-    }, 3000); // Change word every 3 seconds
+    const wordInterval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordEmojis.length);
+    }, 3000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(wordInterval);
   }, []);
 
+  useEffect(() => {
+    const { word, emoji } = wordEmojis[currentWordIndex];
+    scrambleText(word, emoji);
+  }, [currentWordIndex]);
+
   return (
-    <h1 className="text-4xl font-bold text-center mb-8">
-      Where Creativity Meets Technology and 
-      <span className="ml-2 text-blue-500">
-        <Scramble
-          autoStart
-          text={words[currentWord]}
-          steps={[
-            {
-              roll: 10,
-              action: '+',
-              type: 'all',
-            },
-            {
-              action: '-',
-              type: 'forward',
-            },
-          ]}
-          seed={30}
-          speed="medium"
-          bindMethod="constant"
-        />
+      <span className="ml-2 text-blue-500 text-4xl mt-2">
+        {displayText} {currentEmoji}
       </span>
-    </h1>
   );
 };
 
