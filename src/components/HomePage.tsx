@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import Navbar from "./common/Navbar";
 import SectionDividerLine from "./SectionDividerLine";
 import ScrambleText from "@/components/ScrambleText";
@@ -7,6 +8,9 @@ import TechnologyCarnivalHeader from "./TechnologyCarnivalHeader";
 import Countdown from "@/components/Countdown";
 import { Turret_Road } from "next/font/google";
 import Timeline from './Timeline';
+import Guidelines from "./Guidelines";
+import PrizeGrid from "./PrizeGrid";
+
 export const turret = Turret_Road({
   weight: "800",
   subsets: ["latin"],
@@ -23,9 +27,28 @@ const HomePage: React.FC = () => {
     { label: 'Announcement of Winners' },
   ];
 
+  // Animation variants for the main content
+  const mainContentVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        delay: 0.5, // Delay of 0.5 seconds
+        duration: 0.8, 
+        ease: "easeOut" 
+      } 
+    }
+  };
+
   return (
     <div>
       <Navbar />
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={mainContentVariants}
+      >
       <section
         id="hero"
         className="w-11/12 mx-auto p-5 sm:pt-11 max-w-[110rem] pt-28"
@@ -76,21 +99,19 @@ const HomePage: React.FC = () => {
         </div>
         <div className="md:h-10"></div>
         <SectionDividerLine />
-      </section>
+        </section>
 
-      <section className='pb-24'>
-        <Countdown targetDate={targetDate} />
-      </section>
-      <Timeline />
-      
+<section className='pb-24'>
+  <Countdown targetDate={targetDate} />
+</section>
+<PrizeGrid />
+<Timeline />
+<Guidelines />
 
-
-
-
-
-      <div className='h-64'></div>
-    </div>
-  );
+<div className='h-64'></div>
+</motion.div>
+</div>
+);
 };
 
 export default HomePage;

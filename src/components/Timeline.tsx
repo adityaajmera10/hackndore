@@ -6,6 +6,8 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Turret_Road } from 'next/font/google';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const turret = Turret_Road({
   weight: '800',
@@ -13,9 +15,47 @@ const turret = Turret_Road({
 });
 
 export default function CustomTimeline() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
-    <>
-      <h1 className={`text-2xl text-center md:text-5xl font-bold mb-5 ${turret.className} text-primary-heading `}>Timeline</h1>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={containerVariants}
+    >
+      <motion.h1 
+        className={`pt-24 text-2xl text-center md:text-5xl font-bold mb-5 ${turret.className} text-primary-heading`}
+        variants={itemVariants}
+      >
+        Timeline
+      </motion.h1>
       <Timeline position="alternate-reverse">
         {/* Item 1 */}
         <TimelineItem>
@@ -24,10 +64,10 @@ export default function CustomTimeline() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="flex flex-col items-end  justify-end">
-              <div className="w-28  md:text-2xl text-xl text-right">20-07-24</div>
+            <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
+              <div className="w-28 md:text-2xl text-xl text-right">20-07-24</div>
               <div className='text-right md:text-xl'>Final date for registration and presentation submission</div>
-            </div>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
 
@@ -38,11 +78,10 @@ export default function CustomTimeline() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="flex flex-col md:flex-ro justify-start">
-              <div className="w-28  text-xl  md:text-2xl ">23-07-24</div>
+            <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
+              <div className="w-28 text-xl md:text-2xl">23-07-24</div>
               <div className='text-left md:text-xl'>Announcement of shortlisted teams and invitations</div>
-              
-            </div>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
 
@@ -53,10 +92,10 @@ export default function CustomTimeline() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="flex flex-col items-end  justify-end">
-              <div className="w-28 md:text-2xl text-xl  ">26-07-24</div>
+            <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
+              <div className="w-28 md:text-2xl text-xl">26-07-24</div>
               <div className='text-right md:text-xl'>Offline registration and commencement of competition</div>
-           </div>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
 
@@ -66,13 +105,13 @@ export default function CustomTimeline() {
             <TimelineDot />
           </TimelineSeparator>
           <TimelineContent>
-            <div className="flex flex-col  justify-start">
-              <div className="w-28  text-xl  md:text-2xl ">28-07-24</div>
+            <motion.div className="flex flex-col justify-start" variants={itemVariants}>
+              <div className="w-28 text-xl md:text-2xl">28-07-24</div>
               <div className='text-left md:text-xl'>Conclusion of competition and closing ceremony</div>
-            </div>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
       </Timeline>
-    </>
+    </motion.div>
   );
 }
