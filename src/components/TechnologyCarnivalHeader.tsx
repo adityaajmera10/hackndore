@@ -49,7 +49,7 @@ const TechnologyCarnivalHeader: React.FC = () => {
         className={`text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold mb-2 sm:mb-4 text-primary-heading ${turret.className}`}
         variants={itemVariants}
       >
-        Central India's biggest technology carnival
+        Central India&apos;s biggest technology carnival
       </motion.h1>
       <motion.p
         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-4 font-mono"
@@ -67,7 +67,7 @@ const TechnologyCarnivalHeader: React.FC = () => {
         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-4 font-mono"
         variants={itemVariants}
       >
-        Under the leadership of Hon'ble Mayor, Indore
+        Under the leadership of Hon&apos;ble Mayor, Indore
       </motion.p>
       <motion.p
         className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold mb-2 sm:mb-4 text-cyan-400 py-1 md:py-4"
