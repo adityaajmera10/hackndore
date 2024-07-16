@@ -10,7 +10,9 @@ import { Turret_Road } from "next/font/google";
 import Timeline from "./Timeline";
 import Guidelines from "./Guidelines";
 import PrizeGrid from "./PrizeGrid";
-import Faqs from './Faqs'
+import Faqs from "./Faqs";
+import TeamSection from "./TeamSection";
+import VenuePartner from "./VenuePartner";
 
 export const turret = Turret_Road({
   weight: "800",
@@ -117,12 +119,22 @@ const HomePage: React.FC = () => {
           <Guidelines />
         </section>
 
+        <section id="" className="flex flex-col items-center gap-4 pt-16">
+          <TeamSection />
+        </section>
 
-        <section id="faqs" className="flex flex-col items-center gap-4 pt-16">
+        <section id="" className="flex flex-col items-center gap-4 pt-16">
+          <VenuePartner />
+        </section>
+
+        <section
+          id="faqs"
+          className="flex flex-col items-center gap-4 pt-16"
+        >
+
         <Faqs />
         <SectionDividerLine />
-      </section>
-
+        </section>
 
         <div className="h-64"></div>
       </motion.div>

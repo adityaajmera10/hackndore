@@ -5,9 +5,9 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import { Turret_Road } from 'next/font/google';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Turret_Road } from 'next/font/google';
 
 const turret = Turret_Road({
   weight: '800',
