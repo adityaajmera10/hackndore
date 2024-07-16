@@ -82,6 +82,13 @@ const HomePage: React.FC = () => {
         <Countdown targetDate={targetDate} />
       </section>
       <Timeline />
+      
+
+
+
+
+
+      <div className='h-64'></div>
     </div>
   );
 };
