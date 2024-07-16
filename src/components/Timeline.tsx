@@ -49,15 +49,42 @@ export default function CustomTimeline() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
+      className='py-4 sm:py-8 lg-py-16'
     >
       <motion.h1 
-        className={`pt-24 text-2xl text-center md:text-5xl font-bold mb-5 ${turret.className} text-primary-heading`}
+        className={`pt-24 text-2xl text-center md:text-5xl font-bold  ${turret.className} text-primary-heading`}
         variants={itemVariants}
       >
         Timeline
       </motion.h1>
       <Timeline position="alternate-reverse">
         {/* Item 1 */}
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
+              <div className="w-28 md:text-2xl text-xl text-right">16-07-24</div>
+              <div className='text-right md:text-xl'>Registrations are opened for participants</div>
+            </motion.div>
+          </TimelineContent>
+        </TimelineItem>
+
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
+              <div className="w-28 text-xl md:text-2xl">23-07-24</div>
+              <div className='text-left md:text-xl'>Announcement of shortlisted teams and invitations</div>
+            </motion.div>
+          </TimelineContent>
+        </TimelineItem>
+
         <TimelineItem>
           <TimelineSeparator>
             <TimelineDot />

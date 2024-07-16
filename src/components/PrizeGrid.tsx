@@ -90,7 +90,8 @@ const PrizeGrid = () => {
   return (
     <motion.div
       ref={ref}
-      className="container mx-auto px-4 py-8 flex flex-col items-center w-11/12"
+      className="container mx-auto px-4 py-8 flex flex-col items-center w-11/12 pt-12 md:pt-36"
+      id="Rewards"
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}

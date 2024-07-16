@@ -4,16 +4,16 @@ export const navData = [
     path: "/",
   },
   {
-    title: "Our-Domains",
-    path: "/#domain",
+    title: "Rewards",
+    path: "/#Rewards",
   },
   {
-    title: "Upcoming event",
-    path: "/#events",
+    title: "Timeline",
+    path: "/#timeline",
   },
   {
-    title: "Projects",
-    path: "/#projects",
+    title: "Guidelines",
+    path: "/#guidelines",
   },
   {
     title: "FAQs",

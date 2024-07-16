@@ -68,7 +68,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     return (
         <motion.div
             ref={ref}
-            className='py-10 sm:pb-24'
+            className='pt-10 sm:pb-12'
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}

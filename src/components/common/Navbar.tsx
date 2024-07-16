@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import svvvLogo from "@/../public/imc.png";
-import AbhyudayaLogo from "@/../public/hackndorewhite.png";
+import AbhyudayaLogo from "@/../public/hackntry.svg";
 import Image from "next/image";
 import { navData } from "../../../public/data/navData";
 import Link from "next/link";
@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="sm:bg-rich-blue-bg bg-[#111644ee] fixed sm:static w-full z-20 sm:opacity-90"
+      className="sm:bg-rich-blue-bg bg-[#111644ee] fixed  mb-16 w-full z-20 opacity-50"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
