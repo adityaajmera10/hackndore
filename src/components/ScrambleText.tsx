@@ -1,5 +1,12 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { Turret_Road } from "next/font/google";
+
+
+export const turret = Turret_Road({
+  weight: "800",
+  subsets: ["latin"],
+});
 
 interface WordEmoji {
   word: string;
@@ -57,7 +64,7 @@ const ScrambleHeading: React.FC = () => {
   }, [currentWordIndex]);
 
   return (
-      <span className="ml-2 text-blue-500 text-4xl mt-2">
+      <span className={`ml-2 text-blue-500 text-xl sm:text-2xl md:text-4xl mt-2 text-primary-heading  ${turret.className}`}>
         {displayText} {currentEmoji}
       </span>
   );
