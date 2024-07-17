@@ -3,7 +3,11 @@ import first from '../../public/1st.svg'
 import second from '../../public/2nd.svg'
 import third from '../../public/3rd.svg'
 import Image from 'next/image'
-
+import { Turret_Road } from "next/font/google";
+export const turret = Turret_Road({
+    weight: "800",
+    subsets: ["latin"],
+});
 
 const PrizeDisplay = () => {
   const prizes = [
@@ -13,18 +17,21 @@ const PrizeDisplay = () => {
   ];
 
   return (
+    <div>
+        <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>Prizes</h1>
     <div className="bg-black p-8 flex justify-center items-end space-x-4">
       {prizes.map((prize, index) => (
         <div key={index} className={`flex flex-col items-center ${index === 1 ? 'mb-4' : ''}`}>
           <div className={`w-24 h-24 md:w-32 md:h-32 ${index === 1 ? 'w-28 h-28 md:w-36 md:h-36' : ''} rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center mb-3`}>
             <div className={`text-4xl md:text-5xl ${index === 1 ? 'text-5xl md:text-6xl' : ''}`}>
-              <Image src={prize.trophy}/>
+              <Image src={prize.trophy} alt={prize.title}/>
             </div>
           </div>
           <h3 className="text-gray-300 text-sm md:text-base text-center">{prize.title}</h3>
           <p className="text-white font-bold text-lg md:text-xl">{prize.amount}</p>
         </div>
       ))}
+    </div>
     </div>
   );
 };
