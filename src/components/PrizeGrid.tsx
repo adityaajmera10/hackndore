@@ -1,124 +1,32 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { Turret_Road } from "next/font/google";
+import React from 'react';
+import first from '../../public/1st.svg'
+import second from '../../public/2nd.svg'
+import third from '../../public/3rd.svg'
+import Image from 'next/image'
 
-export const turret = Turret_Road({
-  weight: "800",
-  subsets: ["latin"],
-});
 
-const prizes = [
-  {
-    title: "1st Place Winner",
-    amount: "₹5 Lakh",
-    icon: "🥇",
-  },
-  {
-    title: "2nd Place Winner",
-    amount: "₹3 Lakh",
-    icon: "🥈",
-  },
-  {
-    title: "3rd Place Winner",
-    amount: "₹2 Lakh",
-    icon: "🥉",
-  },
-  
-];
-
-interface WinnerCardProps {
-  prize: {
-    title: string;
-    amount: string;
-    icon: string;
-  };
-}
-
-const PrizeGrid = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
+const PrizeDisplay = () => {
+  const prizes = [
+    { title: 'First Runner UP', amount: '1,00,000', trophy: first, color: 'from-orange-400 to-red-500' },
+    { title: 'Winner', amount: '1,50,000', trophy: second, color: 'from-yellow-300 to-yellow-500' },
+    { title: 'Second Runner UP', amount: '50,000', trophy: third, color: 'from-blue-300 to-blue-400' },
+  ];
 
   return (
-    <motion.div
-      ref={ref}
-      className="container mx-auto px-4 py-8 flex flex-col items-center w-11/12 pt-12 md:pt-20"
-      id="Rewards"
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
-      <motion.h1
-        className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading mb-8`}
-        variants={itemVariants}
-      >
-        Total Prize Money - ₹12 Lakh!
-      </motion.h1>
-      <motion.div
-        className="flex flex-wrap justify-center gap-5 items-end"
-        variants={itemVariants}
-      >
-        {prizes.map((prize, index) => (
-          <WinnerCard key={index} prize={prize} />
-        ))}
-      </motion.div>
-    </motion.div>
+    <div className="bg-black p-8 flex justify-center items-end space-x-4">
+      {prizes.map((prize, index) => (
+        <div key={index} className={`flex flex-col items-center ${index === 1 ? 'mb-4' : ''}`}>
+          <div className={`w-24 h-24 md:w-32 md:h-32 ${index === 1 ? 'w-28 h-28 md:w-36 md:h-36' : ''} rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center mb-3`}>
+            <div className={`text-4xl md:text-5xl ${index === 1 ? 'text-5xl md:text-6xl' : ''}`}>
+              <Image src={prize.trophy}/>
+            </div>
+          </div>
+          <h3 className="text-gray-300 text-sm md:text-base text-center">{prize.title}</h3>
+          <p className="text-white font-bold text-lg md:text-xl">{prize.amount}</p>
+        </div>
+      ))}
+    </div>
   );
 };
 
-const WinnerCard: React.FC<WinnerCardProps> = ({ prize }) => {
-  const itemVariants = {
-    hidden: { height: 0 },
-    visible: {
-      height: "auto",
-      transition: {
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
-  return (
-    <motion.div
-      className="bg-gradient-to-r from-purple-500 to-blue-500 shadow-md rounded-lg p-6 flex flex-col items-center justify-between w-full sm:w-1/4 text-white border border-gray-200"
-      variants={itemVariants}
-      initial="hidden"
-      animate="visible"
-    >
-      <div className="flex flex-col items-center gap-3 w-full text-center">
-        <div className="text-5xl mb-4">{prize.icon}</div>
-        <h2 className="text-xl font-bold">{prize.title}</h2>
-        <p className="text-3xl font-bold mt-4">{prize.amount}</p>
-      </div>
-    </motion.div>
-  );
-};
-
-export default PrizeGrid;
+export default PrizeDisplay;
