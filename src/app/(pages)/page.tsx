@@ -24,7 +24,7 @@ const Index: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           >
-            <div className="hidden md:block">
+            <div className="hidden md:block bh-black">
             <VideoComponent src="/intro.mp4" onComplete={handleAnimationComplete} />
 
             </div>
