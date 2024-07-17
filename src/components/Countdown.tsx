@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Turret_Road } from "next/font/google";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
+import { Turret_Road } from "next/font/google";
 export const turret = Turret_Road({
     weight: "800",
     subsets: ["latin"],
@@ -68,7 +68,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     return (
         <motion.div
             ref={ref}
-            className='pt-10 sm:pb-12'
+            className='pt-10 sm:pb-12 px-10'
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -94,6 +94,11 @@ const Countdown = ({ targetDate }: CountdownProps) => {
                     </motion.div>
                 ))}
             </div>
+            <motion.div className='flex-col mt-10' variants={itemVariants}>
+                        <motion.p className={`text-xl sm:text-3xl text-center ${turret.className}`} variants={itemVariants}>
+                           Last Date to register on Unstop is 20-07-24 
+                        </motion.p>
+                    </motion.div>
         </motion.div>
     );
 };

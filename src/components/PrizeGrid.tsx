@@ -107,14 +107,17 @@ const PrizeGrid = () => {
         variants={itemVariants}
       >
         {prizes.map((prize, index) => (
-          <WinnerCard key={index} prize={prize} />
+          <WinnerCard key={index} prize={prize} index={index} />
         ))}
       </motion.div>
     </motion.div>
   );
 };
 
-const WinnerCard: React.FC<WinnerCardProps> = ({ prize }) => {
+const WinnerCard: React.FC<WinnerCardProps & { index: number }> = ({
+  prize,
+  index,
+}) => {
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -129,7 +132,7 @@ const WinnerCard: React.FC<WinnerCardProps> = ({ prize }) => {
 
   return (
     <motion.div
-      className="bg-white shadow-md rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between w-full sm:w-1/3"
+      className={`bg-white shadow-md rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between w-full sm:w-1/3 mt-${index * 8}`}
       variants={itemVariants}
     >
       <div className="flex items-start sm:items-center justify-between sm:space-x-4 gap-5 w-full">
