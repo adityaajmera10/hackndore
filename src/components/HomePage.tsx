@@ -132,7 +132,7 @@ const HomePage: React.FC = () => {
           <Guidelines />
         </section>
 
-        <section id="" className="hidden flex flex-col items-center gap-4 pt-16">
+        <section id="" className="hidden  flex-col items-center gap-4 pt-16">
           <TeamSection />
         </section>
 
