@@ -13,6 +13,7 @@ import PrizeGrid from "./PrizeGrid";
 import Faqs from "./Faqs";
 import TeamSection from "./TeamSection";
 import VenuePartner from "./VenuePartner";
+import MayorsKeynote from "./MayorsKeynote";
 
 export const turret = Turret_Road({
   weight: "800",
@@ -107,6 +108,9 @@ const HomePage: React.FC = () => {
         </section>
 
         <section className="pb-24">
+          <MayorsKeynote/>
+        </section>
+        <section className="pb-24">
           <Countdown targetDate={targetDate} />
         </section>
         <section>
@@ -119,7 +123,7 @@ const HomePage: React.FC = () => {
           <Guidelines />
         </section>
 
-        <section id="" className="flex flex-col items-center gap-4 pt-16">
+        <section id="" className="hidden flex flex-col items-center gap-4 pt-16">
           <TeamSection />
         </section>
 

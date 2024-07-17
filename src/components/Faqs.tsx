@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Turret_Road } from "next/font/google";
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 

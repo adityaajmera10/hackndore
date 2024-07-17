@@ -52,7 +52,7 @@ const Guidelines = () => {
     return (
         <motion.div
             ref={ref}
-            className='py-24 w-8/12 mx-auto'
+            className='pt-24 pb-16 w-8/12 mx-auto'
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}

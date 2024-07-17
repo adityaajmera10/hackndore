@@ -12,28 +12,32 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className=''>
+      
+      <div className='z-40 '>
+        
       <AnimatePresence>
         {!showHomePage ? (
           <motion.div
-            key="video"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          key="video"
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           >
             <VideoComponent src="/intro.mp4" onComplete={handleAnimationComplete} />
           </motion.div>
         ) : (
           <motion.div
-            key="homepage"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          key="homepage"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           >
             <HomePage />
           </motion.div>
         )}
       </AnimatePresence>
+        </div>
     </div>
   );
 };
