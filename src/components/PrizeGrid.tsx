@@ -11,49 +11,38 @@ export const turret = Turret_Road({
 const prizes = [
   {
     title: "Winner",
-    amount: "₹ 1,50,000",
+    amount: 150000,
     details: "Trophy, Certificate, Winner's Kit",
     icon: "🏆",
   },
   {
     title: "First Runner-up",
-    amount: "₹ 1,00,000",
+    amount: 100000,
     details: "Trophy, Certificate, Winner's Kit",
     icon: "🥈",
   },
   {
     title: "Second Runner-up",
-    amount: "₹ 50,000",
+    amount: 50000,
     details: "Trophy, Certificate, Winner's Kit",
     icon: "🥉",
   },
   {
     title: "Winner (School Team)",
-    amount: "₹ 25,000",
+    amount: 25000,
     details: "Trophy, Certificate, Winner's Kit",
     icon: "🏫",
-  },
-  {
-    title: "First Runner-up (School Team)",
-    amount: "₹ 15,000",
-    details: "Trophy, Certificate, Winner's Kit",
-    icon: "📚",
-  },
-  {
-    title: "Special Prizes",
-    amount: "₹ 60,000",
-    details: "Six Categories of 10000 each, Trophy, Certificate, Winner's Kit",
-    icon: "🎁",
   },
 ];
 
 interface WinnerCardProps {
   prize: {
     title: string;
-    amount: string;
+    amount: number;
     details: string;
     icon: string;
   };
+  height: string;
 }
 
 const PrizeGrid = () => {
@@ -87,6 +76,13 @@ const PrizeGrid = () => {
     },
   };
 
+  const getHeight = (amount: number) => {
+    const maxHeight = 400; // Maximum height for the highest prize
+    const minHeight = 250; // Minimum height for the lowest prize
+    const maxAmount = Math.max(...prizes.map((p) => p.amount));
+    return `${((amount / maxAmount) * (maxHeight - minHeight)) + minHeight}px`;
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -103,26 +99,22 @@ const PrizeGrid = () => {
         Rewards and Prizes
       </motion.h1>
       <motion.div
-        className="flex flex-wrap justify-center gap-5"
+        className="flex flex-wrap justify-center gap-5 items-end"
         variants={itemVariants}
       >
-        {prizes.map((prize, index) => (
-          <WinnerCard key={index} prize={prize} index={index} />
-        ))}
+        <WinnerCard prize={prizes[2]} height={getHeight(prizes[2].amount)} />
+        <WinnerCard prize={prizes[0]} height={getHeight(prizes[0].amount)} />
+        <WinnerCard prize={prizes[1]} height={getHeight(prizes[1].amount)} />
       </motion.div>
     </motion.div>
   );
 };
 
-const WinnerCard: React.FC<WinnerCardProps & { index: number }> = ({
-  prize,
-  index,
-}) => {
+const WinnerCard: React.FC<WinnerCardProps> = ({ prize, height }) => {
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { height: 0 },
     visible: {
-      y: 0,
-      opacity: 1,
+      height,
       transition: {
         type: "spring",
         stiffness: 100,
@@ -132,19 +124,23 @@ const WinnerCard: React.FC<WinnerCardProps & { index: number }> = ({
 
   return (
     <motion.div
-      className={`bg-white shadow-md rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between w-full sm:w-1/3 mt-${index * 8}`}
+      className="flex flex-col items-center md:w-[30%] w-[20%] border-4"
       variants={itemVariants}
+      initial="hidden"
+      animate="visible"
     >
-      <div className="flex items-start sm:items-center justify-between sm:space-x-4 gap-5 w-full">
-        <div>
+      <div className="bg-blue-100 h-16 w-16 rounded-full flex items-center justify-center mb-4">
+        <span className="text-3xl">{prize.icon}</span>
+      </div>
+      <div 
+        className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center justify-between w-full"
+        style={{ height: `calc(${height} - 5rem)` }} // Subtracting the icon height and margin
+      >
+        <div className="flex flex-col items-center w-full rotate-90 sm:rotate-0 mt-20 ">
           <div>
-            <h2 className="text-xl font-bold text-black">{prize.title}</h2>
-            <p className="text-gray-700">{prize.details}</p>
+            <h2 className="text-sm md:text-xl font-bold text-black w-[250px] md:w-auto md:mt-0">{prize.title}</h2>
+            <p className="text-xl md:text-2xl font-bold  text-black ">₹{prize.amount.toLocaleString()}</p>
           </div>
-          <p className="text-2xl font-bold mt-4 text-black">{prize.amount}</p>
-        </div>
-        <div className="bg-blue-100 h-16 w-16 rounded-full flex items-center justify-center">
-          <span className="text-3xl">{prize.icon}</span>
         </div>
       </div>
     </motion.div>

@@ -79,8 +79,8 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl">23-07-24</div>
-              <div className='text-left md:text-xl'>Announcement of shortlisted teams and invitations</div>
+              <div className="w-28 text-xl md:text-2xl">20-07-24</div>
+              <div className='text-left md:text-xl'>Final date for registration and presentation submission</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>
@@ -92,8 +92,8 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
-              <div className="w-28 md:text-2xl text-xl text-right">20-07-24</div>
-              <div className='text-right md:text-xl'>Final date for registration and presentation submission</div>
+              <div className="w-28 md:text-2xl text-xl text-right">23-07-24</div>
+              <div className='text-right md:text-xl'>Announcement of shortlisted teams and invitations</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>
@@ -106,8 +106,8 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl">23-07-24</div>
-              <div className='text-left md:text-xl'>Announcement of shortlisted teams and invitations</div>
+              <div className="w-28 text-xl md:text-2xl">26-07-24</div>
+              <div className='text-left md:text-xl'>Offline registration and commencement of competition</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>
@@ -121,7 +121,7 @@ export default function CustomTimeline() {
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
               <div className="w-28 md:text-2xl text-xl">26-07-24</div>
-              <div className='text-right md:text-xl'>Offline registration and commencement of competition</div>
+              <div className='text-right md:text-xl'>Problem Sttements Disclosed to the participants</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>

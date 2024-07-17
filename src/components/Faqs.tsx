@@ -26,12 +26,12 @@ const faqs = [
     answer: "No, one person cannot be a member of more than one team.",
   },
   {
-    question: "What happens if there is a deviation from the rules?",
-    answer: "Any deviation from the rules will result in immediate disqualification of the entire team.",
-  },
-  {
     question: "What is the deadline for registration?",
     answer: "The deadline for registration is 20-07-2024.",
+  },
+  {
+    question: "But isn't Hacking illegal?",
+    answer: "Haha, my one of the favorite parts! The word hack is a bit misinterpreted in reference to hackathons, while over here no one is hacking into something. A hackathon is an event in which a large number of people meet to engage in collaborative computer programming.",
   },
   {
     question: "Is there any registration fee?",

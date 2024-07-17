@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Turret_Road } from "next/font/google";
 import Image from 'next/image';
 import pbhargav from '../../public/pbhargav.jpg'
+import ScrambleTextMayor from '@/components/ScrambleTextMayor'
 
 export const turret = Turret_Road({
     weight: "800",
@@ -124,8 +125,8 @@ const MayorsKeynote = () => {
                         ))}
                     </motion.ul>
                     <motion.div className="pt-8 sm:pt-10 text-center" variants={textVariants}>
-                        <p className="italic text-gray-100 text-center text-xl sm:text-2xl font-thin">
-                        &quot;Let&apos;s innovate, collaborate, and build a better Indore together.&quot;
+                        <p className="italic text-gray-100 text-center text-xl md:text-[1.5rem]  font-light">
+                        &quot;Let&apos;s innovate, collaborate, and build a <ScrambleTextMayor/> Indore together.&quot;
                         </p>
                     </motion.div>
                 </motion.div>

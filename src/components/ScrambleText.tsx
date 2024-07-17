@@ -17,9 +17,9 @@ const ScrambleHeading: React.FC = () => {
   const [displayText, setDisplayText] = useState<string>('');
   const [currentEmoji, setCurrentEmoji] = useState<string>('');
   const wordEmojis: WordEmoji[] = [
-    { word: 'Code', emoji: '💻' },
-    { word: 'Think', emoji: '🧠' },
-    { word: 'Innovate', emoji: '💡' }
+    { word: 'Sustainable', emoji: '💻' },
+    { word: 'Digital', emoji: '💡' },
+    { word: 'Smarter', emoji: '💡' }
   ];
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
 

@@ -65,11 +65,13 @@ const HomePage: React.FC = () => {
               <h1
                 className={`font-extrabold text-2xl sm:text-4xl xl:mt-5 xl:text-6xl myShadow text-primary-heading  ${turret.className}`}
               >
-                Hack&apos;Ndore Hackathon
+                Hack&apos;Ndore
               </h1>
-              <h1 className="text-xl sm:text-2xl lg:text-3xl  font-mono md:w-10/12 pl-3 ">
-                Where Creativity Meets Technology to
+              <h3 className="-mt-6 ml-10 ">A 48-hour PAN India Hackathon</h3>
+              <h1 className="text-xl sm:text-2xl lg:text-3xl  font-mono md:w-11/12  ">
+                Let&apos;s Crack the Code to 
                 <ScrambleText />
+
               </h1>
               <p className="pl-4 text-base sm:text-xl ">
                 Welcome to the inaugural Hack&apos;Ndore Hackathon, Central
@@ -84,13 +86,14 @@ const HomePage: React.FC = () => {
                 <Link
                   href="https://unstop.com/p/hackndore-indore-municipal-corporation-1069856?lb=A3xScbSM&utm_medium=Share&utm_source=WhatsApp"
                   target="_blank"
-                  className="relative px-4 py-2 text-xl font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg max-w-56 text-center mx-auto"
+                  className="relative px-4 py-2 text-[1.6rem] font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg max-w-56 text-center mx-auto"
                 >
                   <div className="relative z-10">Register Now</div>
-                  <div className="font-thin text-sm">Last Date : 20-07-24</div>
+                  
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
               </div>
+              <div className={`font-thin text-xl text-red-500 mx-auto ${turret.className}`}>Last Date to register : 20-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
