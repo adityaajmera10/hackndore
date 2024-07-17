@@ -64,7 +64,7 @@ const ScrambleHeading: React.FC = () => {
   }, [currentWordIndex]);
 
   return (
-      <span className={`ml-2 text-blue-500 text-xl sm:text-2xl md:text-4xl mt-2 text-primary-heading  ${turret.className}`}>
+      <span className={`ml-2 text-xl sm:text-2xl md:text-4xl mt-2 text-[#3fbf61] ${turret.className}`}>
         {displayText} {currentEmoji}
       </span>
   );
