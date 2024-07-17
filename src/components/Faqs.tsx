@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     question: "How can we contact the organizers for more information?",
-    answer: "You can contact the organizers through the contact form on our official website or by emailing us at info@competition.com.",
+    answer: "You can contact the organizers through the contact form on our official website or by emailing us at hackndore@gmail.com.",
   },
 ];
 
