@@ -57,6 +57,7 @@ const Navbar = () => {
               src={AbhyudayaLogo}
               className="h-8 w-52 md:h-16 md:w-64 translate-y-1"
               alt="Logo"
+              priority
             />
           </Link>
         </motion.div>

@@ -23,22 +23,22 @@ const RegistrationProcess: React.FC = () => {
               icon: <FaUsers className="text-4xl mb-4" />,
               title: "Submission Round",
               dates: (
-                <>
+                <div>
                   <strong>Start:</strong> 14 Jul 24, 08:00 AM IST
                   <br />
                   <strong>End:</strong> 20 Jul 24, 11:59 PM IST
-                </>
+                </div>
               ),
               subtitle: "Identify Challenges",
               description: (
-                <>
+                <div>
                   Prepare a short presentation showcasing your Skills
                   <ul className="list-disc list-inside">
                     <li>Identify challenges in Indore</li>
                     <li>Design suitable idea to solve the challenges.</li>
                     <li>Propose a sustainable solution.</li>
                   </ul>
-                </>
+                </div>
               ),
               bgClass: "bg-orange-500",
             },
@@ -46,20 +46,20 @@ const RegistrationProcess: React.FC = () => {
               icon: <FaCog className="text-4xl mb-4" />,
               title: "Offline Round",
               dates: (
-                <>
+                <div>
                   <strong>Start:</strong> 26 Jul 24, 09:00 AM IST
                   <br />
                   <strong>End:</strong> 28 Jul 24, 10:00 PM IST
-                </>
+                </div>
               ),
               subtitle: "Attend the Offline Round",
               description: (
-                <>
+                <div>
                   All shortlisted participants are invited to attend the offline
                   round at Acropolis Institute of Technology and Research,
                   Indore. Participants will be responsible for arranging their
                   own travel arrangements to the venue.
-                </>
+                </div>
               ),
               bgClass: "bg-pink-600",
             },
@@ -67,18 +67,18 @@ const RegistrationProcess: React.FC = () => {
               icon: <FaClock className="text-4xl mb-4" />,
               title: "Presentation Round",
               dates: (
-                <>
+                <div>
                   <strong>Start:</strong> 28 Jul 24, 04:30 PM IST
                   <br />
                   <strong>End:</strong> 28 Jul 24, 10:00 PM IST
-                </>
+                </div>
               ),
               subtitle: "Final Presentation",
               description: (
-                <>
+                <div>
                   The top 10 teams will have the opportunity to present their
                   work and compete for the title of Hack&apos;Ndore champions.
-                </>
+                </div>
               ),
               bgClass: "bg-purple-700",
             },
@@ -99,7 +99,7 @@ const RegistrationProcess: React.FC = () => {
               </h2>
               <div className="mb-5">{item.dates}</div>
               <h3 className="font-bold mb-2">{item.subtitle}</h3>
-              <p>{item.description}</p>
+              <div>{item.description}</div>
             </motion.div>
           ))}
         </div>
