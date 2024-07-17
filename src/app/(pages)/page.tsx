@@ -24,11 +24,11 @@ const Index: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           >
-            
-            <div className="">
-            <VideoComponent src="/mobileintro.mp4" onComplete={handleAnimationComplete} />
+            <div className=" bg-black">
+            <VideoComponent src="/intro.mp4" onComplete={handleAnimationComplete} />
 
             </div>
+            
           </motion.div>
         ) : (
           <motion.div
