@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import Navbar from "./common/Navbar";
+import Footer from "./common/Footer";
 import SectionDividerLine from "./SectionDividerLine";
 import ScrambleText from "@/components/ScrambleText";
 import Link from "next/link";
@@ -107,7 +108,7 @@ const HomePage: React.FC = () => {
           <SectionDividerLine />
         </section>
 
-        <section className="pb-24">
+        <section id="vision" className="pb-24">
           <MayorsKeynote/>
         </section>
         <section className="pb-24">
@@ -140,7 +141,9 @@ const HomePage: React.FC = () => {
         <SectionDividerLine />
         </section>
 
-        <div className="h-64"></div>
+        <div className="h-64">
+          <Footer/>
+        </div>
       </motion.div>
     </div>
   );
