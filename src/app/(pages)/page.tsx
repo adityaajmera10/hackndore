@@ -12,7 +12,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className=''>
+    <div className='bg-black text-white'>
       
       <div className='z-40 '>
         
