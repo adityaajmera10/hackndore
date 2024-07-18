@@ -52,7 +52,7 @@ const Guidelines = () => {
     return (
         <motion.div
             ref={ref}
-            className='pt-24 pb-16 w-8/12 mx-auto'
+            className='mt-24 mb-16 p-10 w-8/12 mx-auto bg-white/10 backdrop-blur-sm'
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}

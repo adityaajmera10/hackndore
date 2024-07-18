@@ -40,14 +40,14 @@ export default function VenuePartner() {
 
   return (
     <motion.div 
-      className='flex flex-col items-center justify-center gap-5'
+      className='mt-24 p-10 flex flex-col items-center justify-center gap-5 bg-white/10 backdrop-blur-sm'
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}
     >
       <motion.h1         
-        className={`pt-24 text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}
+        className={` text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}
         variants={itemVariants}
       >
         Venue Partner

@@ -59,7 +59,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 w-11/12">
+    <div className="container mx-auto px-4 py-8 w-11/12 bg-white/10 backdrop-blur-sm">
       <h1
         className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading mb-8`}
       >

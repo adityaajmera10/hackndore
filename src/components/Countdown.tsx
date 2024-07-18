@@ -68,7 +68,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     return (
         <motion.div
             ref={ref}
-            className='pt-10 sm:pb-12 px-10'
+            className='pt-10 sm:pb-12 '
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -86,7 +86,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
                     { label: 'Minutes', value: minutes },
                     { label: 'Seconds', value: seconds }
                 ].map((item) => (
-                    <motion.div key={item.label} className='flex-col mt-10' variants={itemVariants}>
+                    <motion.div key={item.label} className='flex-col mt-10 ' variants={itemVariants}>
                         <motion.p className={`text-3xl text-center ${turret.className}`} variants={itemVariants}>
                             {item.value}
                         </motion.p>

@@ -49,10 +49,10 @@ export default function CustomTimeline() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='py-4 sm:py-8 lg-py-16'
+      className='py-4 md:mt-20 py-10 bg-white/10 backdrop-blur-sm md:w-10/12 mx-auto'
     >
       <motion.h1 
-        className={`pt-24 text-2xl text-center md:text-5xl font-bold  ${turret.className} text-primary-heading`}
+        className={` text-2xl text-center md:text-5xl font-bold  ${turret.className} text-primary-heading`}
         variants={itemVariants}
       >
         Timeline
@@ -78,7 +78,7 @@ export default function CustomTimeline() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
+            <motion.div className="flex flex-col  justify-start" variants={itemVariants}>
               <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">20-07-24</div>
               <div className='text-left md:text-xl'>Final date for registration and presentation submission</div>
             </motion.div>
@@ -105,7 +105,7 @@ export default function CustomTimeline() {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
-            <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
+            <motion.div className="flex flex-col justify-start" variants={itemVariants}>
               <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">26-07-24</div>
               <div className='text-left md:text-xl'>Offline registration and commencement of competition</div>
             </motion.div>
