@@ -38,7 +38,7 @@ const Index: React.FC = () => {
         playsInline
         className="fixed inset-0 w-full h-full object-cover z-0"
       >
-        <source src="/herobg.mp4" type="video/mp4" />
+        <source src="/herobg.mp4" type="video/mp4" className="opacity-80" />
         Your browser does not support the video tag.
       </video>
 

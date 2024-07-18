@@ -26,7 +26,7 @@ const PrizeDisplay = () => {
   return (
     <div>
         <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>Prizes</h1>
-    <div className="bg-black p-8 flex justify-center items-end space-x-4">
+    <div className="p-8 flex justify-center items-end space-x-4">
       {prizes.map((prize, index) => (
         <div key={index} className={`flex flex-col items-center ${index === 1 ? 'mb-6' : ''}`}>
           <div className={`w-24 h-24 md:w-48 md:h-48 ${index === 1 ? 'w-28 h-28 md:w-54 md:h-54' : ''} rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center mb-3`}>

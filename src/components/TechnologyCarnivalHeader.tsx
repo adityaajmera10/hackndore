@@ -40,7 +40,7 @@ const TechnologyCarnivalHeader: React.FC = () => {
   return (
     <motion.div
       ref={ref}
-      className="bg-black text-white p-4 sm:p-6 md:p-8 text-center"
+      className=" text-white p-4 sm:p-6 md:p-8 text-center"
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
