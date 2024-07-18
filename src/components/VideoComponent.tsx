@@ -21,7 +21,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({ src, onComplete }) => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <video ref={videoRef} src={src} className="h-screen w-full" autoPlay playsInline muted />
+      <video ref={videoRef} src={src} className="h-screen w-full" autoPlay playsInline muted controls={false} />
     </div>
   );
 };
