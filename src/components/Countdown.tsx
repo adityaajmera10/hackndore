@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Turret_Road } from "next/font/google";
-import { WavyBackground } from './WavyBackground'; // Adjust the import path as needed
 
+import { Turret_Road } from "next/font/google";
 export const turret = Turret_Road({
     weight: "800",
     subsets: ["latin"],
