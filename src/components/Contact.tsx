@@ -51,7 +51,7 @@ const ContactForm = () => {
           <p>📧 hackndore@gmail.com</p>
           <p>📞 Sambhav Bhandari <br className="sm:hidden" />(+91) 90399 69100</p>
           <p>📞 Himanshu Goyal <br className="sm:hidden" />(+91) 7828433422</p>
-          <p>📞 Bharat Udawat <br className="sm:hidden" />(+91) 8389549300</p>
+          <p>📞 Bharat Udawat <br className="sm:hidden" />(+91) 8989549300</p>
         </div>
         
         <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors">
