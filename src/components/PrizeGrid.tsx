@@ -25,7 +25,7 @@ const PrizeDisplay = () => {
 
   return (
     <div>
-        <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>Prizes</h1>
+        <h1    className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>Prizes</h1>
     <div className="p-8 flex justify-center items-end space-x-4">
       {prizes.map((prize, index) => (
         <div key={index} className={`flex flex-col items-center ${index === 1 ? 'mb-6' : ''}`}>
@@ -39,10 +39,10 @@ const PrizeDisplay = () => {
         </div>
       ))}
     </div>
-    <div className="bg-black p-8 flex justify-center items-end space-x-4">
+    <div className=" p-8 flex justify-center items-end space-x-4">
       {schoolPrizes.map((prize, index) => (
         <div key={index} className={`flex flex-col items-center `}>
-          <div className={`w-44 h-24 md:w-96 md:h-48 rounded-2xl bg-gray-800 border border-gray-700 flex flex-wrap flex-row-reverse items-center justify-evenly mb-3`}>
+          <div className={`w-44 h-24 md:w-96 md:h-48 rounded-2xl bg-gray-800 bg-opacity-80  flex flex-wrap flex-row-reverse items-center justify-evenly mb-3`}>
             <div className={`text-4xl md:text-5xl 'text-5xl md:text-6xl' : ''}`}>
               <Image src={prize.trophy} alt={prize.title} className='h-20 w-20'/>
             </div>
