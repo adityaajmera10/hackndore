@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hackndore",
-  description: "Central India's largest technology event, brought to you by Indore Municipal Corporation, under the leadership of Hon’ble Mayor of Indore Shri Pushyamitra Bhargav. ",
+  description: " Central India's largest technology event, brought to you by Indore Municipal Corporation, under the leadership of Hon'ble Mayor of Indore Shri Pushyamitra Bhargav. This pioneering hackathon aims to tackle real-time challenges faced by our Municipal Corporation, e-Nagarpalika and other e-Governance portals.The Hackndore Hackathon is a digital initiative by the Indore Municipal Corporation, aiming to position Indore as a technology leader. We bring together brilliant minds to innovate and address urban challenges through collaboration and sustainability. ",
+  keywords :["Hackndore", "Hackathon","Acropolis Institute Of Technology And Research - AITR(Indore)","Unstop" , "Pushyamitra Bhargav" , "Indore Mayor" , "IMC","Indore Municipal Corporation","Central India's biggest technology carnival","A 48-hour PAN India Hackathon","B.Tech/B.E./BCA/M.Tech/M.S/MCA"]
 };
 
 export default function RootLayout({

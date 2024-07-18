@@ -16,11 +16,11 @@ interface WordEmoji {
 const ScrambleHeading: React.FC = () => {
   const [displayText, setDisplayText] = useState<string>('');
   const [currentEmoji, setCurrentEmoji] = useState<string>('');
-  const wordEmojis: WordEmoji[] = [
+  const wordEmojis: WordEmoji[] = React.useMemo(() => [
     { word: 'Sustainable', emoji: '💻' },
     { word: 'Digital', emoji: '💡' },
     { word: 'Smarter', emoji: '💡' }
-  ];
+  ], []);
   const [currentWordIndex, setCurrentWordIndex] = useState<number>(0);
 
   const scrambleText = (finalText: string, emoji: string) => {
@@ -56,12 +56,12 @@ const ScrambleHeading: React.FC = () => {
     }, 3000);
 
     return () => clearInterval(wordInterval);
-  }, []);
+  });
 
   useEffect(() => {
     const { word, emoji } = wordEmojis[currentWordIndex];
     scrambleText(word, emoji);
-  }, [currentWordIndex]);
+  }, [currentWordIndex, wordEmojis]);
 
   return (
       <span className={`ml-2 text-xl sm:text-2xl md:text-4xl mt-2 text-[#3fbf61] ${turret.className}`}>
