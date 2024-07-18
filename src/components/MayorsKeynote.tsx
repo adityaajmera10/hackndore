@@ -84,7 +84,7 @@ const MayorsKeynote = () => {
     return (
         <motion.div
             ref={ref}
-            className='pt-24 pb-16 w-11/12 mx-auto px-5'
+            className='mt-16 pt-8 pb-16 w-11/12 mx-auto px-5 bg-white/10 backdrop-blur-sm'
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}

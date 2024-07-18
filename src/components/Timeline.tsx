@@ -61,13 +61,13 @@ export default function CustomTimeline() {
         {/* Item 1 */}
         <TimelineItem>
           <TimelineSeparator>
-            <TimelineDot />
+            <TimelineDot className='text-primary-heading' />
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
-              <div className="w-28 md:text-2xl text-xl text-right">16-07-24</div>
-              <div className='text-right md:text-xl'>Registrations are opened for participants</div>
+              <div className="w-28 md:text-2xl text-xl text-right ${turret.className} text-primary-heading">16-07-24</div>
+              <div className='text-right md:text-xl '>Registrations are opened for participants</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>
@@ -79,7 +79,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl">20-07-24</div>
+              <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">20-07-24</div>
               <div className='text-left md:text-xl'>Final date for registration and presentation submission</div>
             </motion.div>
           </TimelineContent>
@@ -92,7 +92,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
-              <div className="w-28 md:text-2xl text-xl text-right">23-07-24</div>
+              <div className="w-28 md:text-2xl text-xl text-right ${turret.className} text-primary-heading">23-07-24</div>
               <div className='text-right md:text-xl'>Announcement of shortlisted teams and invitations</div>
             </motion.div>
           </TimelineContent>
@@ -106,7 +106,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col md:flex-row justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl">26-07-24</div>
+              <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">26-07-24</div>
               <div className='text-left md:text-xl'>Offline registration and commencement of competition</div>
             </motion.div>
           </TimelineContent>
@@ -120,7 +120,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
-              <div className="w-28 md:text-2xl text-xl">26-07-24</div>
+              <div className="w-28 md:text-2xl text-xl ${turret.className} text-primary-heading">26-07-24</div>
               <div className='text-right md:text-xl'>Problem Sttements Disclosed to the participants</div>
             </motion.div>
           </TimelineContent>
@@ -133,7 +133,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl">28-07-24</div>
+              <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">28-07-24</div>
               <div className='text-left md:text-xl'>Conclusion of competition and closing ceremony</div>
             </motion.div>
           </TimelineContent>

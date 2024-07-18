@@ -14,6 +14,7 @@ import Faqs from "./Faqs";
 import TeamSection from "./TeamSection";
 import VenuePartner from "./VenuePartner";
 import MayorsKeynote from "./MayorsKeynote";
+import ChairmansAddress from "./ChairPersonsNote";
 import Unstop from "./Unstop";
 import ContactPage from "./Contact";
 
@@ -59,7 +60,7 @@ const HomePage: React.FC = () => {
       >
         <section
           id="hero"
-          className="w-11/12 mx-auto p-5 sm:pt-16 max-w-[110rem] pt-8"
+          className="w-11/12 mx-auto p-5 sm:pt-16 max-w-[110rem] pt-8 "
         >
           <div className="-mt-10 flex flex-col-reverse md:items-center lg:flex-row gap-10 lg:mt-10 ">
             <div className="lg:w-3/5 flex flex-col gap-5">
@@ -94,7 +95,8 @@ const HomePage: React.FC = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
               </div>
-              <div className={`font-thin text-xl text-red-700 mx-auto ${turret.className} `}>Last Date to register : 20-07-24</div>
+              <div className={`hidden md:block font-thin text-2xl text-red-700 mx-auto ${turret.className} absolute right-0 pr-16 top-20 z-50`}>Last Date to register : 20-07-24</div>
+              <div className={`md:hidden font-thin text-2xl text-red-700 mx-auto ${turret.className}`}>Last Date to register : 20-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
@@ -116,6 +118,9 @@ const HomePage: React.FC = () => {
 
         <section id="vision" className="pb-24">
           <MayorsKeynote/>
+        </section>
+        <section id="vision" className="pb-24">
+          <ChairmansAddress/>
         </section>
         <section className="pb-24">
           <Countdown targetDate={targetDate} />

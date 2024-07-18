@@ -24,7 +24,7 @@ const ContactForm = () => {
       initial={{ y: '100%' }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-      className="p-4 sm:p-6 rounded-lg shadow-lg md:w-full w-11/12 max-w-[600px]  mx-auto bg-white/20 backdrop-blur-sm"
+      className="p-4 sm:p-6 rounded-lg shadow-lg md:w-full w-11/12 max-w-[600px]  mx-auto bg-white/10 backdrop-blur-sm"
     >
       <h1 
                 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}
