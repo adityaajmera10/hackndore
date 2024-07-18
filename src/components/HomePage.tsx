@@ -15,6 +15,7 @@ import TeamSection from "./TeamSection";
 import VenuePartner from "./VenuePartner";
 import MayorsKeynote from "./MayorsKeynote";
 import Unstop from "./Unstop";
+import ContactPage from "./Contact";
 
 import { Turret_Road } from "next/font/google";
 export const turret = Turret_Road({
@@ -130,6 +131,9 @@ const HomePage: React.FC = () => {
         </section>
         <section id="guidelines">
           <Guidelines />
+        </section>
+        <section id="guidelines">
+          <ContactPage />
         </section>
 
         <section id="" className="hidden  flex-col items-center gap-4 pt-16">

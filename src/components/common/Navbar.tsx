@@ -9,9 +9,13 @@ import Link from "next/link";
 import { FiAlignJustify } from "react-icons/fi";
 import { FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [showPortals, setShowPortals] = useState(false);
+
   const toggleModel = () => {
     setNavOpen(!navOpen);
   };
@@ -40,7 +44,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="sm:bg-rich-blue-bg bg-[#111644ee] fixed  mb-16 w-full z-20 opacity-50"
+      className="sm:bg-rich-blue-bg bg-[#111644ee] fixed mb-16 w-full z-20 opacity-50"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -72,6 +76,25 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+          <motion.div 
+            className="relative"
+            onMouseEnter={() => setShowPortals(true)}
+            onMouseLeave={() => setShowPortals(false)}
+            variants={itemVariants}
+          >
+            <div className="px-4 text-[#EEE] hover:text-[#fff] hover:scale-125 text-nowrap transition-all duration-200 ease-in-out cursor-pointer">
+              Our Portals
+            </div>
+            {showPortals && (
+              <div className="absolute left-0 w-64 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div className="py-1 " role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+         <Link href="https://www.imcindore.mp.gov.in/" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400  " role="menuitem"><FaExternalLinkAlt className='h-6 w-6 mb-2' /><span className="text-sm ml-3">Indore Municipal Corporation(Website)</span></Link>
+                  <Link href="https://www.mpenagarpalika.gov.in/irj/portal/anonymous" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem"><FaExternalLinkAlt className='h-6 w-6 mb-2' /><span className="text-sm ml-3">Indore Nagar Palika</span></Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore&hl=en_IN&pli=1" className="flex  px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem"><FaExternalLinkAlt className='h-6 w-6 mb-2' /><span className="text-sm ml-3">311 App</span></Link>
+                </div>
+              </div>
+            )}
+          </motion.div>
         </motion.div>
         <motion.div className="sm:invisible relative" variants={itemVariants}>
           <button onClick={toggleModel}>
@@ -95,6 +118,16 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div variants={itemVariants}>
+                <Link href="https://www.imcindore.mp.gov.in/" className="px-8 py-1 border-b bg-[#0f1437b0] text-[#eee] hover:text-[#fff] text-nowrap transition-all duration-200 ease-in-out">
+                  IMC
+                </Link>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <Link href="https://esevaindore.gov.in/" className="px-8 py-1 border-b bg-[#0f1437b0] text-[#eee] hover:text-[#fff] text-nowrap transition-all duration-200 ease-in-out">
+                  eSeva Portal
+                </Link>
+              </motion.div>
             </motion.div>
           )}
         </motion.div>

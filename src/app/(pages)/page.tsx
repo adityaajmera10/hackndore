@@ -13,7 +13,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white relative">
       <Head>
         <meta property="og:title" content="Hackndore - Hackathon in Indore" />
         <meta
@@ -30,7 +30,19 @@ const Index: React.FC = () => {
         <meta name="ICBM" content="22.7196, 75.8577" />
       </Head>
 
-      <div className="z-40 ">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/herobg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div className="z-40 relative">
         <AnimatePresence>
           {!showHomePage ? (
             <motion.div
@@ -39,7 +51,7 @@ const Index: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <div className=" bg-black">
+              <div className="bg-black">
                 <VideoComponent
                   src="/intro.mp4"
                   onComplete={handleAnimationComplete}
