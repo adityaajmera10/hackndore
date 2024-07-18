@@ -103,6 +103,7 @@ const RegistrationProcess: React.FC = () => {
             </motion.div>
           ))}
         </div>
+        <div id="Rewards"></div>
       </div>
     </div>
   );

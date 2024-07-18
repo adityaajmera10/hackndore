@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
               </div>
-              <div className={`font-thin text-xl text-red-500 mx-auto ${turret.className}`}>Last Date to register : 20-07-24</div>
+              <div className={`font-thin text-xl text-red-700 mx-auto ${turret.className} `}>Last Date to register : 20-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
@@ -123,7 +123,7 @@ const HomePage: React.FC = () => {
         <section className="pb-24">
           <Unstop />
         </section>
-        <section>
+        <section >
           <PrizeGrid />
         </section>
         <section id="timeline">
