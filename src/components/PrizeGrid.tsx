@@ -39,6 +39,22 @@ const PrizeDisplay = () => {
         </div>
       ))}
     </div>
+    <div className="bg-black p-8 flex justify-center items-end space-x-4">
+      {schoolPrizes.map((prize, index) => (
+        <div key={index} className={`flex flex-col items-center `}>
+          <div className={`w-44 h-24 md:w-96 md:h-48 rounded-2xl bg-gray-800 border border-gray-700 flex flex-wrap flex-row-reverse items-center justify-evenly mb-3`}>
+            <div className={`text-4xl md:text-5xl 'text-5xl md:text-6xl' : ''}`}>
+              <Image src={prize.trophy} alt={prize.title} className='h-20 w-20'/>
+            </div>
+            <div>
+            <h3 className="text-gray-300 text-sm md:text-lg text-center">{prize.title}</h3>
+          <p className="text-white font-bold text-lg md:text-2xl">{prize.amount}</p>
+
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
     </div>
   );
 };
