@@ -3,9 +3,10 @@ import React, { useRef, useEffect } from 'react';
 interface VideoComponentProps {
   src: string;
   onComplete: () => void;
+  className: string;
 }
 
-const VideoComponent: React.FC<VideoComponentProps> = ({ src, onComplete }) => {
+const VideoComponent: React.FC<VideoComponentProps> = ({ src, onComplete, className }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const VideoComponent: React.FC<VideoComponentProps> = ({ src, onComplete }) => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <video ref={videoRef} src={src} className="h-screen w-full" autoPlay playsInline muted controls={false} />
+      <video ref={videoRef} src={src} className={`h-screen w-full ${className}`} autoPlay playsInline muted controls={false} />
     </div>
   );
 };

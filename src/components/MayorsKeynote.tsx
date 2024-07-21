@@ -91,7 +91,7 @@ const MayorsKeynote = () => {
         >
             <motion.h1 
                 className={`font-extrabold text-2xl sm:text-4xl xl:mt-5 xl:text-6xl myShadow text-primary-heading text-center ${turret.className} pb-5`}
-                variants={textVariants}
+                variants={textVariants} 
             >
                 Mayor&apos;s Vision
             </motion.h1>

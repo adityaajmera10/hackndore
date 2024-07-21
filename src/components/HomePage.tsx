@@ -79,10 +79,11 @@ const HomePage: React.FC = () => {
                 Welcome to the inaugural Hack&apos;Ndore Hackathon, Central
                 India&apos;s largest technology event, brought to you by Indore
                 Municipal Corporation, under the leadership of Hon&apos;ble
-                Mayor of Indore Shri Pushyamitra Bhargav. This pioneering
-                hackathon aims to tackle real-time challenges faced by our
+                Mayor of Indore Shri Pushyamitra Bhargav. <span className="hidden md:block">
+                This pioneering hackathon aims to tackle real-time challenges faced by our
                 Municipal Corporation, e-Nagarpalika and other e-Governance
                 portals.
+                </span>
               </p>
               <div className="flex items-center">
                 <Link
@@ -96,7 +97,7 @@ const HomePage: React.FC = () => {
                 </Link>
               </div>
               <div className={`hidden md:block font-thin text-2xl text-red-500 mx-auto ${turret.className} absolute right-0 pr-16 top-20 z-10 left-24`}>Last Date to register : 22-07-24</div>
-              <div className={`md:hidden font-thin text-2xl text-red-500 mx-auto text-center ${turret.className}`}>Last Date to register : 22-07-24</div>
+              <div className={`md:hidden font-thin text-2xl text-red-500 mx-auto text-center ${turret.className}`}>Last Date to register <br/> 22-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
@@ -113,9 +114,9 @@ const HomePage: React.FC = () => {
             <TechnologyCarnivalHeader />
           </div>
           <div className="md:h-10"></div>
-          <SectionDividerLine />
+          <SectionDividerLine  />
         </section>
-
+        <div id="vision"></div>
         <section id="vision" className="pb-24">
           <MayorsKeynote/>
         </section>
@@ -128,10 +129,12 @@ const HomePage: React.FC = () => {
         <section className="pb-24">
           <Unstop />
         </section>
+        
         <section >
           <PrizeGrid />
         </section>
-        <section id="timeline">
+        <div id="timeline"></div>
+        <section>
           <Timeline />
         </section>
         <section id="guidelines">

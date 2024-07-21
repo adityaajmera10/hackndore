@@ -36,28 +36,49 @@ const Index: React.FC = () => {
         loop
         muted
         playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0"
+        className="fixed inset-0 w-full h-full object-cover z-0 opacity-65 blur-[1px]"
       >
-        <source src="/herobg.mp4" type="video/mp4" className="opacity-80" />
-        Your browser does not support the video tag.
+        <source src="/herobg.mp4" type="video/mp4" className="opacity-10" />
       </video>
 
       <div className="z-40 relative">
         <AnimatePresence>
           {!showHomePage ? (
-            <motion.div
-              key="video"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <div className="bg-black">
-                <VideoComponent
-                  src="/intro.mp4"
-                  onComplete={handleAnimationComplete}
-                />
-              </div>
-            </motion.div>
+            <>
+              {/* Desktop Component */}
+              <motion.div
+                key="desktop-video"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="hidden md:block"
+              >
+                <div className="bg-black ">
+                  <VideoComponent
+                    src="/intro.mp4"
+                    onComplete={handleAnimationComplete}
+                    className=""
+                  />
+                </div>
+              </motion.div>
+
+              {/* Mobile Component */}
+              <motion.div
+                key="mobile-video"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="md:hidden"
+              >
+                <div className="bg-black">
+                  <VideoComponent
+                    src="/mobileIntro.mp4"
+                    onComplete={handleAnimationComplete}
+                    className=""
+                  />
+                </div>
+              </motion.div>
+            </>
           ) : (
             <motion.div
               key="homepage"
