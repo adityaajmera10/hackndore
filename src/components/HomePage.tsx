@@ -14,7 +14,7 @@ import TeamSection from "./TeamSection";
 import MayorsKeynote from "./MayorsKeynote";
 import Unstop from "./Unstop";
 import ContactPage from "./Contact";
-import Slider from "./Slider";
+import Socials from "./Socials";
 
 import { Turret_Road } from "next/font/google";
 export const turret = Turret_Road({
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
       >
         <section
           id="hero"
-          className="w-11/12 mx-auto p-5 sm:pt-16 max-w-[110rem] pt-8 "
+          className="w-11/12 mx-auto p-5 sm:pt-16 max-w-[110rem] pt-8 backdrop-blur-sm"
         >
           <div className="-mt-10 flex flex-col-reverse md:items-center lg:flex-row gap-10 lg:mt-10 ">
             <div className="lg:w-3/5 flex flex-col gap-5">
@@ -83,6 +83,7 @@ const HomePage: React.FC = () => {
                 portals.
                 </span>
               </p>
+              <div className='flex align-center justify-center'><Socials/></div>
               <div className="flex items-center">
                 <Link
                   href="https://unstop.com/p/hackndore-indore-municipal-corporation-1069856?lb=A3xScbSM&utm_medium=Share&utm_source=WhatsApp"

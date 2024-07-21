@@ -11,7 +11,7 @@ const RegistrationProcess: React.FC = () => {
 
   return (
     <div className="py-10 flex justify-center items-center ">
-      <div className="w-[90vw] max-w-7xl mx-auto text-centerbackdrop-blur-sm pt-16">
+      <div className="w-[90vw] max-w-7xl mx-auto text-center backdrop-blur-sm pt-16">
         <h1
           className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading pb-16`}
         >
