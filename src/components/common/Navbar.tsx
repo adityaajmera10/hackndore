@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="fixed mb-16 w-full z-20 opacity-50 bg-rich-blue-bg/60"
+      className="fixed mb-16 w-full z-20  bg-rich-blue-bg/80"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -84,17 +84,17 @@ const Navbar = () => {
               Our Portals
             </div>
             {showPortals && (
-              <div className="absolute left-0 w-64 rounded-md shadow-lg bg-white/50 ring-1 ring-black ring-opacity-5">
+              <div className="absolute left-0 w-64 rounded-2xl shadow-lg bg-white/90 ring-1 ring-black ring-opacity-5">
                 <div className="py-1 " role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  <Link href="https://www.imcindore.mp.gov.in/" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
+                  <Link href="https://www.imcindore.mp.gov.in/" target="_blank" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
                     <FaExternalLinkAlt className='h-6 w-6 mb-2' />
                     <span className="text-sm ml-3">Indore Municipal Corporation(Website)</span>
                   </Link>
-                  <Link href="https://www.mpenagarpalika.gov.in/irj/portal/anonymous" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
+                  <Link href="https://www.mpenagarpalika.gov.in/irj/portal/anonymous" target="_blank" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
                     <FaExternalLinkAlt className='h-6 w-6 mb-2' />
                     <span className="text-sm ml-3">Indore Nagar Palika</span>
                   </Link>
-                  <Link href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore&hl=en_IN&pli=1" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
+                  <Link href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore&hl=en_IN&pli=1" target="_blank" className="flex px-4 py-2 text-sm text-blue-600 hover:text-blue-400" role="menuitem">
                     <FaExternalLinkAlt className='h-6 w-6 mb-2' />
                     <span className="text-sm ml-3">311 App</span>
                   </Link>
@@ -126,18 +126,18 @@ const Navbar = () => {
                 </motion.div>
               ))}
               <motion.div className="relative" variants={itemVariants}>
-                <div className="px-8 py-1 text-[#eee] hover:text-[#fff] cursor-pointer" onClick={() => setShowPortals(!showPortals)}>
+                <div className={`px-8 py-1 cursor-pointer ${showPortals? 'text-blue-700' : 'text-white'}`} onClick={() => setShowPortals(!showPortals)}>
                   Our Portals
                 </div>
                 {showPortals && (
-                  <div className="pl-8 mt-2">
-                    <Link href="https://www.imcindore.mp.gov.in/" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
+                  <div className={ `bg-white absolute rounded-lg right-32 top-2 `}>
+                    <Link href="https://www.imcindore.mp.gov.in/" target="_blank" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
                       Indore Municipal Corporation(Website)
                     </Link>
-                    <Link href="https://www.mpenagarpalika.gov.in/irj/portal/anonymous" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
+                    <Link href="https://www.mpenagarpalika.gov.in/irj/portal/anonymous" target="_blank" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
                       Indore Nagar Palika
                     </Link>
-                    <Link href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore&hl=en_IN&pli=1" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
+                    <Link href="https://play.google.com/store/apps/details?id=com.everythingcivic.indore&hl=en_IN&pli=1" target="_blank" className="block px-2 py-1 text-sm text-blue-600 hover:text-blue-400 transition-all duration-200 ease-in-out">
                       311 App
                     </Link>
                   </div>
