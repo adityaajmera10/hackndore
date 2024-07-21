@@ -80,7 +80,7 @@ const FAQSection = () => {
                 onClick={() => toggleFAQ(index)}
               >
                 <h2 className="text-lg font-bold text-black">{faq.question}</h2>
-                {expandedIndex === index ? <FiChevronUp className="text-2xl" /> : <FiChevronDown className="text-2xl" />}
+                {expandedIndex === index ? <FiChevronUp className="text-2xl text-black" /> : <FiChevronDown className="text-2xl text-black" />}
               </div>
               {expandedIndex === index && (
                 <motion.div
@@ -110,7 +110,7 @@ const FAQSection = () => {
                 onClick={() => toggleFAQ(index + 6)}
               >
                 <h2 className="text-lg font-bold text-black">{faq.question}</h2>
-                {expandedIndex === index + 6 ? <FiChevronUp className="text-2xl" /> : <FiChevronDown className="text-2xl" />}
+                {expandedIndex === index + 6 ? <FiChevronUp className="text-2xl text-black" /> : <FiChevronDown className="text-2xl text-black" />}
               </div>
               {expandedIndex === index + 6 && (
                 <motion.div
