@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="fixed mb-16 w-full z-20 opacity-50"
+      className="fixed mb-16 w-full z-20 opacity-50 bg-rich-blue-bg/60"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

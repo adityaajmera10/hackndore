@@ -95,8 +95,8 @@ const HomePage: React.FC = () => {
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
               </div>
-              <div className={`hidden md:block font-thin text-2xl text-red-500 mx-auto ${turret.className} absolute right-0 pr-16 top-20 z-10 left-24`}>Last Date to register : 20-07-24</div>
-              <div className={`md:hidden font-thin text-2xl text-red-500 mx-auto text-center ${turret.className}`}>Last Date to register : 20-07-24</div>
+              <div className={`hidden md:block font-thin text-2xl text-red-500 mx-auto ${turret.className} absolute right-0 pr-16 top-20 z-10 left-24`}>Last Date to register : 22-07-24</div>
+              <div className={`md:hidden font-thin text-2xl text-red-500 mx-auto text-center ${turret.className}`}>Last Date to register : 22-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
