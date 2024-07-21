@@ -45,34 +45,14 @@ const Index: React.FC = () => {
         <AnimatePresence>
           {!showHomePage ? (
             <>
-              {/* Desktop Component */}
               <motion.div
-                key="desktop-video"
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="hidden md:block"
               >
                 <div className="bg-black ">
                   <VideoComponent
                     src="/intro.mp4"
-                    onComplete={handleAnimationComplete}
-                    className=""
-                  />
-                </div>
-              </motion.div>
-
-              {/* Mobile Component */}
-              <motion.div
-                key="mobile-video"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="md:hidden"
-              >
-                <div className="bg-black">
-                  <VideoComponent
-                    src="/mobileIntro.mp4"
                     onComplete={handleAnimationComplete}
                     className=""
                   />
