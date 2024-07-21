@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 import Navbar from "./common/Navbar";
-import Footer from "./common/Footer";
 import SectionDividerLine from "./SectionDividerLine";
 import ScrambleText from "@/components/ScrambleText";
 import Link from "next/link";
@@ -12,11 +11,10 @@ import Guidelines from "./Guidelines";
 import PrizeGrid from "./PrizeGrid";
 import Faqs from "./Faqs";
 import TeamSection from "./TeamSection";
-import VenuePartner from "./VenuePartner";
 import MayorsKeynote from "./MayorsKeynote";
-import ChairmansAddress from "./ChairPersonsNote";
 import Unstop from "./Unstop";
 import ContactPage from "./Contact";
+import Slider from "./Slider";
 
 import { Turret_Road } from "next/font/google";
 export const turret = Turret_Road({
@@ -113,15 +111,10 @@ const HomePage: React.FC = () => {
           <div className=" pt-10">
             <TechnologyCarnivalHeader />
           </div>
-          <div className="md:h-10"></div>
-          <SectionDividerLine  />
         </section>
         <div id="vision"></div>
-        <section id="vision" className="pb-24">
+        <section id="vision" className="pb-8">
           <MayorsKeynote/>
-        </section>
-        <section id="vision" className="pb-24">
-          <ChairmansAddress/>
         </section>
         <section className="pb-24">
           <Countdown targetDate={targetDate} />
@@ -140,30 +133,20 @@ const HomePage: React.FC = () => {
         <section id="guidelines">
           <Guidelines />
         </section>
-        <section id="guidelines">
-          <ContactPage />
-        </section>
-
         <section id="" className="hidden  flex-col items-center gap-4 pt-16">
           <TeamSection />
         </section>
-
-        <section id="" className="flex flex-col items-center gap-4 pt-16">
-          <VenuePartner />
-        </section>
-
         <section
           id="faqs"
           className="flex flex-col items-center gap-4 pt-16"
         >
-
         <Faqs />
         <SectionDividerLine />
         </section>
-
-        <div className="h-64">
-          <Footer/>
-        </div>
+        <section id="guidelines">
+          <ContactPage />
+        </section>
+        <div className='h-28'></div>
       </motion.div>
     </div>
   );

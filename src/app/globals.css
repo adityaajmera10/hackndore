@@ -319,3 +319,37 @@ body {
 @media only screen and (device-width: 768px) {
 
 }
+/* styles/globals.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}

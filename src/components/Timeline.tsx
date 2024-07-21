@@ -49,7 +49,7 @@ export default function CustomTimeline() {
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={containerVariants}
-      className='py-4 md:mt-20 py-10 bg-white/10 backdrop-blur-sm md:w-10/12 mx-auto'
+      className=' md:mt-20 py-10  backdrop-blur-sm md:w-10/12 mx-auto'
     >
       <motion.h1 
         className={` text-2xl text-center md:text-5xl font-bold  ${turret.className} text-primary-heading`}

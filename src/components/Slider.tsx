@@ -1,83 +1,59 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Turret_Road } from "next/font/google";
+// components/InfiniteSlider.tsx
+import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import devArmy from '../../public/partner-logo/devArmy.svg';
+import Edavv from '../../public/partner-logo/Edavv.svg';
+import ipsTechClub from '../../public/partner-logo/ipsTechClub.svg';
+import puneDev from '../../public/partner-logo/puneDev.svg';
+import swapSo from '../../public/partner-logo/swapSo.svg';
 
-export const turret = Turret_Road({
-  weight: "800",
-  subsets: ["latin"],
-});
 
-const images = [
-  "/path/to/image1.jpg",
-  "/path/to/image2.jpg",
-  "/path/to/image3.jpg",
-  // Add more image paths as needed
+
+const partnersData = [
+  { name: "Dev Army", logo: devArmy },
+  { name: "Edavv", logo: Edavv },
+  { name: "IPS Tech Club", logo: ipsTechClub },
+  { name: "Pune Dev", logo: puneDev },
+  { name: "SwapSo", logo: swapSo},
 ];
 
-const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? 1000 : -1000,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  exit: (direction: number) => ({
-    x: direction < 0 ? 1000 : -1000,
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-    },
-  }),
-};
+const InfiniteSlider: React.FC = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-const ImageSlider = () => {
-  const [[page, direction], setPage] = useState([0, 0]);
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
+    const firstElement = slider.children[0] as HTMLElement;
 
-  const index = page % images.length;
+    const scrollWidth = slider.scrollWidth;
+    const clientWidth = slider.clientWidth;
+    let startPosition = 0;
+
+    const animate = () => {
+      startPosition -= 2; // Adjust the speed by changing the value
+      if (startPosition <= -firstElement.clientWidth) {
+        slider.appendChild(firstElement);
+        startPosition += firstElement.clientWidth;
+      }
+      slider.style.transform = `translateX(${startPosition}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+  }, []);
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.img
-          key={page}
-          src={images[index]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          className="absolute w-full h-full object-cover"
-        />
-      </AnimatePresence>
-      <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2 cursor-pointer bg-gray-800 bg-opacity-50 rounded-full" onClick={() => paginate(-1)}>
-        <span className="text-white text-2xl">{'<'}</span>
-      </div>
-      <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2 cursor-pointer bg-gray-800 bg-opacity-50 rounded-full" onClick={() => paginate(1)}>
-        <span className="text-white text-2xl">{'>'}</span>
-      </div>
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, i) => (
-          <span key={i} className={`h-2 w-2 rounded-full ${i === index ? 'bg-white' : 'bg-gray-500'}`}></span>
+    <div className="slider-container">
+      <div className="slider" ref={sliderRef}>
+        {partnersData.map((partner, index) => (
+          <div className="slide" key={index}>
+            <Image src={partner.logo} alt={partner.name} className="logo" />
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-const App = () => (
-  <div>
-    <ImageSlider />
-    {/* Other components can be added here */}
-  </div>
-);
-
-export default App;
+export default InfiniteSlider;

@@ -3,52 +3,54 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Toaster, toast } from 'react-hot-toast';
 import { Turret_Road } from "next/font/google";
+import { useInView } from 'react-intersection-observer';
 
 export const turret = Turret_Road({
     weight: "800",
     subsets: ["latin"],
 });
 
-const ContactForm = () => {
+const ContactAndVenue = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    mobileNumber: '',
-    email: '',
-    message: ''
+    firstName: '', lastName: '', mobileNumber: '', email: '', message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
     visible: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: 'spring',
-            stiffness: 100
-        }
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.2
+      }
     }
   };
 
-  const handleChange = (e:any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 }
+    }
   };
 
-  const handleSubmit = async (e:any) => {
+  const handleChange = (e :any) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-
     try {
-      const response = await axios.post('/api/sendmail', formData);
+      await axios.post('/api/sendmail', formData);
       toast.success('Email sent successfully!');
-      setFormData({
-        firstName: '',
-        lastName: '',
-        mobileNumber: '',
-        email: '',
-        message: ''
-      });
+      setFormData({ firstName: '', lastName: '', mobileNumber: '', email: '', message: '' });
     } catch (err) {
       toast.error('Failed to send email. Please try again later.');
     } finally {
@@ -58,78 +60,47 @@ const ContactForm = () => {
 
   return (
     <motion.div
-      initial={{ y: '100%' }}
-      animate={{ y: 0 }}
-      transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-      className="p-4 sm:p-6 rounded-lg shadow-lg md:w-full w-11/12 max-w-[600px] mx-auto bg-white/10 backdrop-blur-sm"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+      className="mt-24 p-4 sm:p-6 flex flex-col md:flex-row gap-8  backdrop-blur-sm w-11/12 mx-auto"
     >
       <Toaster />
-      <h1 
-        className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}
-      >
-        Countdown
-      </h1>
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <input
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            className="flex-1 p-2 border rounded w-full"
-            value={formData.firstName}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            className="flex-1 p-2 border rounded w-full"
-            value={formData.lastName}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
-          <div className="flex w-full space-x-2">
-            <input
-              type="tel"
-              name="mobileNumber"
-              className="flex-1 p-2 border rounded"
-              placeholder="Mobile Number"
-              value={formData.mobileNumber}
-              onChange={handleChange}
-            />
+      <motion.div variants={itemVariants} className="md:w-1/2">
+        <h1 className={`text-2xl text-center md:text-4xl font-bold ${turret.className} text-primary-heading mb-4`}>
+          Contact Us
+        </h1>
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+            <input type="text" name="firstName" placeholder="First Name" className="flex-1 p-2 border rounded text-black" value={formData.firstName} onChange={handleChange} />
+            <input type="text" name="lastName" placeholder="Last Name" className="flex-1 p-2 border rounded text-black" value={formData.lastName} onChange={handleChange} />
           </div>
-        </div>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="w-full p-2 border rounded"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <textarea
-          name="message"
-          placeholder="Explain in under 100 words"
-          className="w-full p-2 border rounded h-24 resize-none"
-          value={formData.message}
-          onChange={handleChange}
-        ></textarea>
+          <input type="tel" name="mobileNumber" className="w-full p-2 border rounded  text-black" placeholder="Mobile Number" value={formData.mobileNumber} onChange={handleChange} />
+          <input type="email" name="email" placeholder="Email" className="w-full p-2 border rounded  text-black" value={formData.email} onChange={handleChange} />
+          <textarea name="message" placeholder="Explain in under 100 words" className="w-full p-2 border rounded h-24 resize-none  text-black" value={formData.message} onChange={handleChange}></textarea>
+          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors" disabled={isLoading}>
+            {isLoading ? 'Sending...' : 'Submit'}
+          </button>
+        </form>
         
-        <div className="space-y-2 text-lg sm:text-base ">
-          <h3 className="font-semibold">Contact us at</h3>
-          <p>📧 hackndore@gmail.com</p>
-          <p>📞 Sambhav Bhandari <br className="sm:hidden" />(+91) 90399 69100</p>
-          <p>📞 Himanshu Goyal <br className="sm:hidden" />(+91) 7828433422</p>
-          <p>📞 Bharat Udawat <br className="sm:hidden" />(+91) 8989549300</p>
-        </div>
-
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors" disabled={isLoading}>
-          {isLoading ? 'Sending...' : 'Submit'}
-        </button>
-      </form>
+      </motion.div>
+      
+      <motion.div variants={itemVariants} className="w-[90vw] md:w-1/2 ">
+        <h1 className={`text-2xl text-center md:text-4xl font-bold ${turret.className} text-primary-heading mb-4`}>
+          Venue Partner
+        </h1>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2401.893246935181!2d75.94263188998197!3d22.82040509113712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e0!3m2!1sen!2sin!4v1721172607895!5m2!1sen!2sin" 
+          className='h-64 w-full rounded-lg mb-4 max-w-[300px] ml-3 md:max-w-[400px] md:mx-auto' 
+          loading="lazy"
+        ></iframe>
+        <h2 className='text-center text-sm md:text-base'>
+          Acropolis Institute Of Technology And Research - AITR(Indore)
+        </h2>
+      </motion.div>
     </motion.div>
   );
 };
 
-export default ContactForm;
+export default ContactAndVenue;

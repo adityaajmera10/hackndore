@@ -79,7 +79,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
             >
                 Countdown
             </motion.h1>
-            <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center justify-center gap-5 backdrop-blur-sm">
                 {[
                     { label: 'Days', value: days },
                     { label: 'Hours', value: hours },
@@ -96,7 +96,7 @@ const Countdown = ({ targetDate }: CountdownProps) => {
             </div>
             <motion.div className='flex-col mt-10' variants={itemVariants}>
                         <motion.p className={`text-xl sm:text-3xl text-center ${turret.className}`} variants={itemVariants}>
-                           Last Date to register on Unstop is 20-07-24 
+                           Last Date to register on Unstop is <br/>22-07-24 
                         </motion.p>
                     </motion.div>
         </motion.div>

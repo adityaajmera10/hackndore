@@ -20,7 +20,7 @@ const PrizeDisplay = () => {
   
   const schoolPrizes = [
     { title: 'Winner(School Team)', amount: '25,000', trophy: first, color: 'from-yellow-300 to-yellow-500' },
-    { title: 'First Runner-Up (School Team)', amount: '15,000', trophy: second, color: 'from-orange-400 to-red-500' },
+    { title: 'First Runner-Up (School)', amount: '15,000', trophy: second, color: 'from-orange-400 to-red-500' },
   ];
 
   const specialPrizes = [
@@ -46,7 +46,7 @@ const PrizeDisplay = () => {
       <div className="p-8 flex justify-center items-end space-x-4 -mt-10">
         {schoolPrizes.map((prize, index) => (
           <BackgroundCard key={index} className={`flex flex-col items-center`}>
-            <div className={`w-44 h-24 md:w-96 md:h-48 rounded-2xl bg-gray-800 flex flex-wrap flex-row-reverse items-center justify-evenly mb-3`}>
+            <div className={`w-44 h-36 text-center md:w-96 md:h-48 rounded-2xl bg-gray-800 flex flex-wrap flex-row-reverse items-center justify-evenly mb-3`}>
               <div className={`text-4xl md:text-5xl`}>
                 <Image src={prize.trophy} alt={prize.title} className="h-20 w-20" />
               </div>
