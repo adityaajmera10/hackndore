@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Turret_Road } from 'next/font/google';
 
+
 export const turret = Turret_Road({
   weight: '800',
   subsets: ['latin'],

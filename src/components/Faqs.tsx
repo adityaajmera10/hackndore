@@ -76,7 +76,7 @@ const FAQSection = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               <div
-                className="bg-white shadow-md rounded-lg p-4 cursor-pointer flex justify-between items-center"
+                className="bg-white/70 shadow-md rounded-lg p-4 cursor-pointer flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
               >
                 <h2 className="text-lg font-bold text-black">{faq.question}</h2>
@@ -84,7 +84,7 @@ const FAQSection = () => {
               </div>
               {expandedIndex === index && (
                 <motion.div
-                  className="p-4 bg-white border-t border-gray-200"
+                  className="p-4 bg-white/70 "
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -106,7 +106,7 @@ const FAQSection = () => {
               transition={{ duration: 0.3, delay: (index + 6) * 0.1 }}
             >
               <div
-                className="bg-white shadow-md rounded-lg p-4 cursor-pointer flex justify-between items-center"
+                className="bg-white/70 shadow-md rounded-lg p-4 cursor-pointer flex justify-between items-center"
                 onClick={() => toggleFAQ(index + 6)}
               >
                 <h2 className="text-lg font-bold text-black">{faq.question}</h2>
@@ -114,7 +114,7 @@ const FAQSection = () => {
               </div>
               {expandedIndex === index + 6 && (
                 <motion.div
-                  className="p-4 bg-white border-t border-gray-200"
+                  className="p-4 bg-white/70 "
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
