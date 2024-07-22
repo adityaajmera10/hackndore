@@ -17,6 +17,9 @@ import ContactPage from "./Contact";
 import Socials from "./Socials";
 
 import { Turret_Road } from "next/font/google";
+import CommunityPartners from "./Partners";
+
+
 export const turret = Turret_Road({
   weight: "800",
   subsets: ["latin"],
@@ -136,6 +139,9 @@ const HomePage: React.FC = () => {
         </section>
         <section id="" className="hidden  flex-col items-center gap-4 pt-16">
           <TeamSection />
+        </section>
+        <section id="" className="  flex-col items-center gap-4 pt-16">
+          <CommunityPartners />
         </section>
         <section
           id="faqs"
