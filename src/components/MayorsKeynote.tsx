@@ -19,27 +19,9 @@ interface LeaderData {
 }
 
 const LeaderTemplate: React.FC<LeaderData> = ({ name, title, image, quote, vision, slogan }) => {
-    const imageVariants = {
-        hidden: { opacity: 0, scale: 0.4 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 0.5 }
-        }
-    };
-
-    const textVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.5 }
-        }
-    };
-
     return (
         <motion.div className="flex flex-col md:flex-row items-start justify-between mb-16">
-            <motion.div className="md:w-1/3 mb-8 md:mb-0" variants={imageVariants}>
+            <motion.div className="md:w-1/3 mb-8 md:mb-0" >
                 <Image 
                     src={image}
                     alt={name}
@@ -48,7 +30,7 @@ const LeaderTemplate: React.FC<LeaderData> = ({ name, title, image, quote, visio
                     className="rounded-3xl border mx-auto max-h-[400px] object-cover"
                 />
             </motion.div>
-            <motion.div className="md:w-2/3 text-left pl-0 md:pl-8" variants={textVariants}>
+            <motion.div className="md:w-2/3 text-left pl-0 md:pl-8" >
                 <h2 className="text-2xl font-bold text-primary-heading text-center md:text-left">{name}</h2>
                 <p className="text-gray-400 mb-4 text-center md:text-left">{title}</p>
                 <p className="mb-4 text-gray-100 text-base">{quote}</p>
@@ -99,18 +81,16 @@ const LeadershipVision: React.FC = () => {
         <motion.div
             ref={ref}
             className='mt-16 pt-8 pb-16 w-11/12 mx-auto px-5 backdrop-blur-sm'
-            variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
         >
             <motion.h1 
-                className={`font-extrabold text-2xl sm:text-4xl xl:mt-5 xl:text-6xl myShadow text-primary-heading text-center ${turret.className} pb-5 md:pb-14`}
-                variants={containerVariants} 
+                className={`font-extrabold text-2xl sm:text-4xl xl:mt-5 xl:text-6xl myShadow text-primary-heading text-center ${turret.className} pb-5 md:pb-14`} 
             >
                 Leadership Vision
             </motion.h1>
             {leadershipData.map((leader, index) => (
-                <motion.div key={index} variants={containerVariants}>
+                <motion.div key={index} >
                     <LeaderTemplate {...leader} />
                 </motion.div>
             ))}

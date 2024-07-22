@@ -79,7 +79,7 @@ export default function CustomTimeline() {
           </TimelineSeparator>
           <TimelineContent>
             <motion.div className="flex flex-col  justify-start" variants={itemVariants}>
-              <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">20-07-24</div>
+              <div className="w-28 text-xl md:text-2xl ${turret.className} text-primary-heading">22-07-24</div>
               <div className='text-left md:text-xl'>Final date for registration and presentation submission</div>
             </motion.div>
           </TimelineContent>
