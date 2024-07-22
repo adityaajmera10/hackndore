@@ -10,7 +10,7 @@ import { partners } from './../../public/partners';
 
 const PartnersSection: React.FC = () => {
   return (
-    <div className="py-8 w-10/12 mx-auto">
+    <div className="w-11/12 mx-auto">
       {partners.map((partnerCategory, index) => (
         <div key={index} className="mb-12">
           <div className="text-center mb-8">
@@ -18,7 +18,7 @@ const PartnersSection: React.FC = () => {
               {partnerCategory.type}
             </h2>
           </div>
-          <div className="w-10/12 mx-auto gap-y-5 flex justify-center items-center flex-wrap px-4">
+          <div className=" mx-auto gap-y-5 flex justify-center items-center flex-wrap px-4">
             {partnerCategory.partners.map((partner, id) => (
               <div
                 className="mx-4 p-4 bg-white/10  rounded-lg flex flex-col justify-center items-center"
@@ -28,7 +28,9 @@ const PartnersSection: React.FC = () => {
                   height: '200px',
                 }}
               >
-                <Image src={partner.logo} alt={partner.name} width={100} height={100} objectFit="contain" />
+                <div className='h-32 flex items-center justify-center'>
+                <Image src={partner.logo} alt={partner.name} width={100} height={100} objectFit="contain" className={` ${partner.className}`} />
+                </div>
                 <h3 className="text-white mt-4 text-center">{partner.name}</h3>
               </div>
             ))}
