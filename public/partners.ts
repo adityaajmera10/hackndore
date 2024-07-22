@@ -23,7 +23,7 @@ export const partners = [
     {
         type : 'AR-VR Partner',
         partners : [
-            { name: 'VRadicals India', logo: 'partner-logo/VRadicals.svg' },
+            { name: 'VRadicals India', logo: 'partner-logo/vradicals.svg' },
         ]
     },
 
