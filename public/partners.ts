@@ -8,7 +8,7 @@ export const partners = [
             { name: 'Google Developer Group\n(Indore)', logo: 'partner-logo/google.svg' },
             { name: 'SwapSo', logo: 'partner-logo/swapSo.svg' },
             { name: 'Dev Army theHackCalendar', logo: 'partner-logo/devArmy.svg' },
-            { name: 'Edavv', logo: 'partner-logo/Edavv.svg' },
+            { name: 'E-cell DAVV', logo: 'partner-logo/Edavv.svg' },
             { name: 'IPS Tech Club', logo: 'partner-logo/ipsTechClub.svg' },
             { name: 'Pune Dev', logo: 'partner-logo/puneDev.svg' },
             { name: 'AlertCode', logo: 'partner-logo/alertcode.svg' },
