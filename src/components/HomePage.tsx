@@ -135,14 +135,14 @@ const HomePage: React.FC = () => {
         <section>
           <Timeline />
         </section>
-        <section id="guidelines">
-          <Guidelines />
-        </section>
         <section id="" className="hidden  flex-col items-center gap-4 pt-16">
           <TeamSection />
         </section>
         <section id="" className="  flex-col items-center gap-4 pt-16">
           <CommunityPartners />
+        </section>
+        <section id="guidelines">
+          <Guidelines />
         </section>
         <section
           id="faqs"
