@@ -15,6 +15,7 @@ import MayorsKeynote from "./MayorsKeynote";
 import Unstop from "./Unstop";
 import ContactPage from "./Contact";
 import Socials from "./Socials";
+import Footer from "@/components/common/Footer";
 
 import { Turret_Road } from "next/font/google";
 import CommunityPartners from "./Partners";
@@ -153,7 +154,9 @@ const HomePage: React.FC = () => {
         <section id="guidelines">
           <ContactPage />
         </section>
-        <div className='h-28'></div>
+        <section id="guidelines">
+          <Footer />
+        </section>
       </motion.div>
     </div>
   );
