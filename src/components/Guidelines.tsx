@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Turret_Road } from 'next/font/google';
 
@@ -13,31 +12,6 @@ const Guidelines = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-      },
-    },
-  };
 
   const guidelines = [
     {
@@ -84,29 +58,22 @@ const Guidelines = () => {
   ];
 
   return (
-    <motion.div
+    <div
       ref={ref}
       className="mt-24 mb-16 p-10 w-11/12 md:w-9/12 mx-auto backdrop-blur-sm"
-      variants={containerVariants}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
     >
-      <motion.h1
+      <h1
         className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading mb-8`}
-        variants={itemVariants}
       >
         Guidelines
-      </motion.h1>
-      <motion.ul className="space-y-8 md:ml-16">
+      </h1>
+      <ul className="space-y-8 md:ml-16">
         {guidelines.map((guideline, index) => (
-          <motion.li
+          <li
             key={index}
             className="flex flex-col md:flex-row items-start "
-            variants={itemVariants}
           >
-            <span className="font-bold mb-2 w-48 ">
-              {guideline.title}
-            </span>
+            <span className="font-bold mb-2 w-48 ">{guideline.title}</span>
             <ul className="space-y-2 list-disc">
               {guideline.items.map((item, idx) => (
                 <li key={idx} className="">
@@ -114,10 +81,10 @@ const Guidelines = () => {
                 </li>
               ))}
             </ul>
-          </motion.li>
+          </li>
         ))}
-      </motion.ul>
-    </motion.div>
+      </ul>
+    </div>
   );
 };
 

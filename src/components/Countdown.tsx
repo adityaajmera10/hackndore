@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
 import { Turret_Road } from "next/font/google";
+
 export const turret = Turret_Road({
     weight: "800",
     subsets: ["latin"],
@@ -14,10 +12,6 @@ interface CountdownProps {
 
 const Countdown = ({ targetDate }: CountdownProps) => {
     const [timeLeft, setTimeLeft] = useState<number>(0);
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -40,45 +34,11 @@ const Countdown = ({ targetDate }: CountdownProps) => {
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    const containerVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                when: "beforeChildren",
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: 'spring',
-                stiffness: 100
-            }
-        }
-    };
-
     return (
-        <motion.div
-            ref={ref}
-            className='pt-10 sm:pb-12 '
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-        >
-            <motion.h1 
-                className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}
-                variants={itemVariants}
-            >
+        <div className='pt-10 sm:pb-12'>
+            <h1 className={`text-2xl text-center md:text-5xl font-bold ${turret.className} text-primary-heading`}>
                 Countdown
-            </motion.h1>
+            </h1>
             <div className="flex items-center justify-center gap-5 backdrop-blur-sm">
                 {[
                     { label: 'Days', value: days },
@@ -86,20 +46,20 @@ const Countdown = ({ targetDate }: CountdownProps) => {
                     { label: 'Minutes', value: minutes },
                     { label: 'Seconds', value: seconds }
                 ].map((item) => (
-                    <motion.div key={item.label} className='flex-col mt-10 ' variants={itemVariants}>
-                        <motion.p className={`text-3xl text-center ${turret.className}`} variants={itemVariants}>
+                    <div key={item.label} className='flex-col mt-10'>
+                        <p className={`text-3xl text-center ${turret.className}`}>
                             {item.value}
-                        </motion.p>
-                        <motion.p variants={itemVariants}>{item.label}: </motion.p>
-                    </motion.div>
+                        </p>
+                        <p>{item.label}:</p>
+                    </div>
                 ))}
             </div>
-            <motion.div className='flex-col mt-10' variants={itemVariants}>
-                        <motion.p className={`text-xl sm:text-3xl text-center ${turret.className}`} variants={itemVariants}>
-                           Last Date to register on Unstop is <br/>22-07-24 
-                        </motion.p>
-                    </motion.div>
-        </motion.div>
+            <div className='flex-col mt-10'>
+                <p className={`text-xl sm:text-3xl text-center ${turret.className}`}>
+                    Last Date to register on Unstop is <br />22-07-24
+                </p>
+            </div>
+        </div>
     );
 };
 

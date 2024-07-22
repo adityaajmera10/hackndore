@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Toaster, toast } from 'react-hot-toast';
 import { Turret_Road } from "next/font/google";
-import { useInView } from 'react-intersection-observer';
 
 export const turret = Turret_Road({
     weight: "800",
@@ -15,36 +13,10 @@ const ContactAndVenue = () => {
     firstName: '', lastName: '', mobileNumber: '', email: '', message: ''
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        when: "beforeChildren",
-        staggerChildren: 0.2
-      }
-    }
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
-  const handleChange = (e :any) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     try {
@@ -59,34 +31,65 @@ const ContactAndVenue = () => {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={containerVariants}
-      className="mt-24 p-4 sm:p-6 flex flex-col md:flex-row gap-8  backdrop-blur-sm w-11/12 mx-auto"
-    >
+    <div className="mt-24 p-4 sm:p-6 flex flex-col md:flex-row gap-8 backdrop-blur-sm w-11/12 mx-auto">
       <Toaster />
-      <motion.div variants={itemVariants} className="md:w-1/2">
+      <div className="md:w-1/2">
         <h1 className={`text-2xl text-center md:text-4xl font-bold ${turret.className} text-primary-heading mb-4`}>
           Contact Us
         </h1>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-            <input type="text" name="firstName" placeholder="First Name" className="flex-1 p-2 border rounded text-white bg-white/20 hover:bg-white/30" value={formData.firstName} onChange={handleChange} />
-            <input type="text" name="lastName" placeholder="Last Name" className="flex-1 p-2 border rounded text-white bg-white/20 hover:bg-white/30" value={formData.lastName} onChange={handleChange} />
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              className="flex-1 p-2 border rounded text-white bg-white/20 hover:bg-white/30"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              className="flex-1 p-2 border rounded text-white bg-white/20 hover:bg-white/30"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
           </div>
-          <input type="tel" name="mobileNumber" className="w-full p-2 border rounded  text-white bg-white/20 hover:bg-white/30" placeholder="Mobile Number" value={formData.mobileNumber} onChange={handleChange} />
-          <input type="email" name="email" placeholder="Email" className="w-full p-2 border rounded  text-white bg-white/20 hover:bg-white/30" value={formData.email} onChange={handleChange} />
-          <textarea name="message" placeholder="Explain in under 100 words" className="w-full p-2 border rounded h-24 resize-none  text-white bg-white/20 hover:bg-white/30" value={formData.message} onChange={handleChange}></textarea>
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors" disabled={isLoading}>
+          <input
+            type="tel"
+            name="mobileNumber"
+            className="w-full p-2 border rounded text-white bg-white/20 hover:bg-white/30"
+            placeholder="Mobile Number"
+            value={formData.mobileNumber}
+            onChange={handleChange}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full p-2 border rounded text-white bg-white/20 hover:bg-white/30"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <textarea
+            name="message"
+            placeholder="Explain in under 100 words"
+            className="w-full p-2 border rounded h-24 resize-none text-white bg-white/20 hover:bg-white/30"
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors"
+            disabled={isLoading}
+          >
             {isLoading ? 'Sending...' : 'Submit'}
           </button>
         </form>
-        
-      </motion.div>
+      </div>
       
-      <motion.div variants={itemVariants} className="w-[90vw] md:w-1/2 ">
+      <div className="w-[90vw] md:w-1/2">
         <h1 className={`text-2xl text-center md:text-4xl font-bold ${turret.className} text-primary-heading mb-4`}>
           Venue Partner
         </h1>
@@ -98,8 +101,8 @@ const ContactAndVenue = () => {
         <h2 className='text-center text-sm md:text-2xl opacity-80'>
           Acropolis Institute Of Technology And <br/> Research - AITR(Indore)
         </h2>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 

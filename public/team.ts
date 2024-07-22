@@ -1,4 +1,4 @@
-import rajesh from "./rajesh.svg";
+import rajesh from "./team/default.svg";
 
 interface Person {
   id: number;
