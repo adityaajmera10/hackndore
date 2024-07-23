@@ -68,7 +68,7 @@ const Navbar = () => {
             <motion.div key={idx} variants={itemVariants}>
               <Link
                 href={item?.path}
-                className="px-4 text-[#EEE] hover:text-[#fff] hover:scale-125 text-nowrap transition-all duration-200 ease-in-out"
+                className="px-4 text-[#EEE] hover:text-[#fff]  text-nowrap transition-all duration-200 ease-in-out"
               >
                 {item?.title}
               </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
             onMouseLeave={() => setShowPortals(false)}
             variants={itemVariants}
           >
-            <div className="px-4 text-[#EEE] hover:text-[#fff] hover:scale-125 text-nowrap transition-all duration-200 ease-in-out cursor-pointer">
+            <div className="px-4 text-[#EEE] hover:text-[#fff]  text-nowrap transition-all duration-200 ease-in-out cursor-pointer">
               Our Portals
             </div>
             {showPortals && (

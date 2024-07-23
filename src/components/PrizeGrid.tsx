@@ -13,14 +13,14 @@ export const turret = Turret_Road({
 
 const PrizeDisplay = () => {
   const prizes = [
-    { title: 'First Runner UP', amount: '1,00,000', trophy: second, color: 'from-orange-400 to-red-500' },
-    { title: 'Winner', amount: '1,50,000', trophy: first, color: 'from-yellow-300 to-yellow-500' },
-    { title: 'Second Runner UP', amount: '50,000', trophy: third, color: 'from-blue-300 to-blue-400' },
+    { title: 'First Runner UP', amount: 'INR 1,00,000', trophy: second, color: 'from-orange-400 to-red-500' },
+    { title: 'Winner', amount: 'INR 1,50,000', trophy: first, color: 'from-yellow-300 to-yellow-500' },
+    { title: 'Second Runner UP', amount: 'INR 50,000', trophy: third, color: 'from-blue-300 to-blue-400' },
   ];
   
   const schoolPrizes = [
-    { title: 'Winner(School Team)', amount: '25,000', trophy: first, color: 'from-yellow-300 to-yellow-500' },
-    { title: 'First Runner-Up (School)', amount: '15,000', trophy: second, color: 'from-orange-400 to-red-500' },
+    { title: 'Winner(School Team)', amount: 'INR 25,000', trophy: first, color: 'from-yellow-300 to-yellow-500' },
+    { title: 'First Runner-Up (School)', amount: 'INR 15,000', trophy: second, color: 'from-orange-400 to-red-500' },
   ];
 
   const specialPrizes = [
