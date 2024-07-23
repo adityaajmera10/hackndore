@@ -12,13 +12,13 @@ import PrizeGrid from "./PrizeGrid";
 import Faqs from "./Faqs";
 import TeamSection from "./TeamSection";
 import MayorsKeynote from "./MayorsKeynote";
-import Unstop from "./Unstop";
 import ContactPage from "./Contact";
 import Socials from "./Socials";
 import Footer from "@/components/common/Footer";
 
 import { Turret_Road } from "next/font/google";
 import CommunityPartners from "./Partners";
+import { FlipWords } from "./ui/flip-words";
 
 
 export const turret = Turret_Road({
@@ -72,9 +72,9 @@ const HomePage: React.FC = () => {
                 Hack&apos;Ndore
               </h1>
               <h3 className="-mt-6 ml-10 ">A 48-hour PAN India Hackathon</h3>
-              <h1 className="text-xl sm:text-2xl lg:text-3xl  font-mono md:w-11/12  ">
+              <h1 className="text-xl sm:text-2xl lg:text-3xl  font-mono md:w-11/12 ">
                 Let&apos;s Crack the Code to 
-                <ScrambleText />
+                <FlipWords words={["Innovate", "Collaborate", "Create"]} />
 
               </h1>
               <p className="pl-4 text-base sm:text-xl ">
@@ -92,15 +92,13 @@ const HomePage: React.FC = () => {
                 <Link
                   href="https://unstop.com/p/hackndore-indore-municipal-corporation-1069856?lb=A3xScbSM&utm_medium=Share&utm_source=WhatsApp"
                   target="_blank"
-                  className="relative px-4 py-2 text-[1.6rem] font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg max-w-56 text-center mx-auto"
+                  className="relative px-4 py-2 text-[1.6rem] font-bold  rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg max-w-72 text-center mx-auto"
                 >
-                  <div className="relative z-10">Register Now</div>
+                  <div className="relative z-10 text-xl">Registrations Closed</div>
                   
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
               </div>
-              <div className={`hidden md:block font-thin text-2xl text-red-500 mx-auto ${turret.className} absolute z-10 left-24 top-2`}>Last Date to register : 22-07-24</div>
-              <div className={`md:hidden font-thin text-2xl text-red-500 mx-auto text-center ${turret.className}`}>Last Date to register <br/> 22-07-24</div>
             </div>
             <div className="sm:mt-5  lg:w-3/5 xl:w-2/5">
               <video
@@ -123,9 +121,6 @@ const HomePage: React.FC = () => {
         </section>
         <section className="pb-24">
           <Countdown targetDate={targetDate} />
-        </section>
-        <section className="pb-24">
-          <Unstop />
         </section>
         
         <section >

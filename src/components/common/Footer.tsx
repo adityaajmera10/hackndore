@@ -153,7 +153,7 @@ const Navbar = () => {
               target="_blank"
               className="hidden lg:block relative px-4 py-2 text-2xl text-center font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg"
             >
-              <div className="relative z-10">Register Now</div>
+              <div className="relative z-10">Registrations Closed</div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
             </Link>
           </motion.div>
