@@ -30,7 +30,7 @@ const faqs = [
     answer: "The deadline for registration is 20-07-2024.",
   },
   {
-    question: "But isn't Hacking illegal?",
+    question: "But isn't Hackathon illegal?",
     answer: "Haha, my one of the favorite parts! The word hack is a bit misinterpreted in reference to hackathons, while over here no one is hacking into something. A hackathon is an event in which a large number of people meet to engage in collaborative computer programming.",
   },
   {
