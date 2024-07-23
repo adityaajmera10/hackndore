@@ -13,7 +13,6 @@ export const partners = [
             { name: 'E-cell DAVV', logo: 'partner-logo/Edavv.svg', className:'scale-110' },
             { name: 'IPS Tech Club', logo: 'partner-logo/ipsTechClub.svg' ,className:'scale-110'},
             { name: 'Pune Dev', logo: 'partner-logo/puneDev.svg' }, 
-            { name: 'Linkedin Local Indore', logo: 'partner-logo/Llocal.svg',className:'bg-white scale-125' }, 
             { name: 'AlertCode', logo: 'partner-logo/alertcode.svg' , className:'scale-150'},
         ]
     },
