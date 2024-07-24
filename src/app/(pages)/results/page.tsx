@@ -62,7 +62,7 @@ const TeamTable: React.FC = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="mb-4 p-2 border rounded text-black"
       /></div>
-      <table className="w-10/12 mx-auto border text-center border-gray-300">
+      <table className="w-10/12 mx-auto border text-center border-gray-300 overflow-x-scroll">
         <thead>
           <tr>
             <th className="py-2 px-4 border">Team Name</th>
