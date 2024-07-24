@@ -121,7 +121,7 @@ export default function CustomTimeline() {
           <TimelineContent>
             <motion.div className="flex flex-col items-end justify-end" variants={itemVariants}>
               <div className="w-28 md:text-2xl text-xl ${turret.className} text-primary-heading">26-07-24</div>
-              <div className='text-right md:text-xl'>Problem Sttements Disclosed to the participants</div>
+              <div className='text-right md:text-xl'>Problem Statements Disclosed to the participants</div>
             </motion.div>
           </TimelineContent>
         </TimelineItem>
