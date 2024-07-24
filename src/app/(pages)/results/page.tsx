@@ -85,7 +85,7 @@ const TeamTable: React.FC = () => {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 flex-wrap">
           {Array.from({ length: Math.ceil(filteredTeams.length / teamsPerPage) }, (_, i) => (
             <button
               key={i}
