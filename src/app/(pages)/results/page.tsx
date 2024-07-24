@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { teamsData } from '../../../../public/results';
 import Navbar from '@/components/common/Navbar';
-import turret from '@/components/Countdown'
+import {turret} from '@/components/Countdown'
 
 type Gender = 'M' | 'F';
 type Role = 'Team Leader' | 'Team Member';
