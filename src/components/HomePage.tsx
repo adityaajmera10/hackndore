@@ -90,11 +90,11 @@ const HomePage: React.FC = () => {
               <div className='flex align-center justify-center'><Socials/></div>
               <div className="flex items-center">
                 <Link
-                  href="https://unstop.com/p/hackndore-indore-municipal-corporation-1069856?lb=A3xScbSM&utm_medium=Share&utm_source=WhatsApp"
+                  href="./results"
                   target="_blank"
                   className="relative px-4 py-2 text-[1.6rem] font-bold  rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300 ease-in-out shadow-lg max-w-72 text-center mx-auto"
                 >
-                  <div className="relative z-10 text-xl">Registrations Closed</div>
+                  <div className="relative z-10 text-xl">Results Are Out!!</div>
                   
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-500 blur-lg opacity-75 animate-pulse"></div>
                 </Link>
