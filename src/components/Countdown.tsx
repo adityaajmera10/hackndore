@@ -54,11 +54,6 @@ const Countdown = ({ targetDate }: CountdownProps) => {
                     </div>
                 ))}
             </div>
-            <div className='flex-col mt-10'>
-                <p className={`text-xl sm:text-3xl text-center ${turret.className}`}>
-                    Last Date to register on Unstop is <br />22-07-24
-                </p>
-            </div>
         </div>
     );
 };
