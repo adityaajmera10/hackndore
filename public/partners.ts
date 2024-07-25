@@ -4,6 +4,12 @@ import classNames from "classnames";
 
 export const partners = [
     {
+        type : 'Technical Partner',
+        partners : [
+            { name: 'GDG', logo: 'partner-logo/geek.svg' },
+        ]
+    },
+    {
         type : 'Community Partner',
         partners : [
             { name: 'Google Developer Group\n(Indore)', logo: 'partner-logo/google.svg'  , className:''} ,
@@ -16,12 +22,6 @@ export const partners = [
             { name: 'AlertCode', logo: 'partner-logo/alertcode.svg' , className:'scale-150'},
         ]
     },
-    // {
-    //     type : 'Technical Partner',
-    //     partners : [
-    //         { name: 'GDG', logo: 'partner-logo/geek.svg' },
-    //     ]
-    // },
     {
         type : 'AR-VR Partner',
         partners : [
