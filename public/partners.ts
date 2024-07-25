@@ -3,12 +3,7 @@ import classNames from "classnames";
 
 
 export const partners = [
-    {
-        type : 'Technical Partner',
-        partners : [
-            { name: 'GDG', logo: 'partner-logo/geek.svg' },
-        ]
-    },
+   
     {
         type : 'Community Partner',
         partners : [

@@ -8,10 +8,18 @@ export const turret = Turret_Road({
   subsets: ['latin'],
 });
 import { partners } from './../../public/partners';
+import geek from '../../public/partner-logo/geek.svg'
 
 const PartnersSection: React.FC = () => {
   return (
     <div className="md:w-11/12 mx-auto">
+      <h2 className={`text-3xl md:text-5xl font-bold py-10 text-primary-heading text-center   ${turret.className}`}>
+              Technical Partner
+            </h2>
+      <div className="flex items-center justify-center pb-16">
+            <Image src={geek} alt={"geek"} width={300} height={100} objectFit="contain" className={`scale-150`} />
+           
+        </div>          
       {partners.map((partnerCategory, index) => (
         <div key={index} className="mb-12">
           <div className="text-center mb-8">
